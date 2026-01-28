@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khám Phá Miền Trung - Con Đường Di Sản</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Travel VietNam</div>
+        <div class="header-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="mien-bac.html">Miền Bắc</a>
+            <a href="mien-trung.html" class="active">Miền Trung</a>
+            <a href="mien-nam.html">Miền Nam</a>
+            <a href="bien-dao.html">Biển Đảo</a>
+        </div>
+        <i class="fas fa-bars mobile-menu-icon"></i>
+    </header>
+    <div class="region-banner">
+        <div class="banner-background" id="bannerImages">
+            <img src="img/phocohoian1.jpg" class="active" alt="Hội An">
+            <img src="img/banahills.jpg" alt="Bà Nà">
+            <img src="img/phongnha5.jpg" alt="Phong Nha">
+            <img src="img/thanhdiamyson5.jpg" alt="Mỹ Sơn">
+            <img src="img/kinhthanhhue.png" alt="Cố Đô Huế">
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Di Sản Miền Trung</h1>
+            <p>Con Đường Di Sản & Thiên Đường Biển Xanh</p>
+        </div>
+    </div>
+    <div class="regions-nav-container">
+        <div class="regions-nav">
+            <a href="mien-bac.html" class="region-btn">Miền Bắc</a>
+            <a href="mien-trung.html" class="region-btn active-region">Miền Trung</a>
+            <a href="mien-nam.html" class="region-btn">Miền Nam</a>
+            <a href="bien-dao.html" class="region-btn">Biển Đảo</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Điểm Đến Hấp Dẫn</div>
+            <div class="section-subtitle">Vẻ đẹp trường tồn</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="card-grid">
+            <div class="card" onclick="showModal('hoian')">
+                <img src="img/phocohoian1.jpg" alt="Hội An">
+                <div class="card-info">
+                    <h3>Phố Cổ Hội An</h3>
+                    <p><i class="fas fa-lantern"></i> Di sản văn hóa thế giới cổ kính.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('bana')">
+                <img src="img/banahills.jpg" alt="Bà Nà">
+                <div class="card-info">
+                    <h3>Bà Nà Hills</h3>
+                    <p><i class="fas fa-cloud"></i> Đường lên tiên cảnh Đà Nẵng.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('myson')">
+                <img src="img/thanhdiamyson5.jpg" alt="Mỹ Sơn">
+                <div class="card-info">
+                    <h3>Thánh Địa Mỹ Sơn</h3>
+                    <p><i class="fas fa-gopuram"></i> Kiệt tác kiến trúc Chăm Pa.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('phongnha')">
+                <img src="img/phongnha5.jpg" alt="Phong Nha">
+                <div class="card-info">
+                    <h3>Phong Nha - Kẻ Bàng</h3>
+                    <p><i class="fas fa-mountain"></i> Vương quốc hang động kỳ vĩ.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('hue')">
+                <img src="img/kinhthanhhue.png" alt="Huế">
+                <div class="card-info">
+                    <h3>Cố Đô Huế</h3>
+                    <p><i class="fas fa-history"></i> Kinh thành vàng son một thuở.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('lyson')">
+                <img src="img/daolyson.jfif" alt="Lý Sơn">
+                <div class="card-info">
+                    <h3>Đảo Lý Sơn</h3>
+                    <p><i class="fas fa-water"></i> Vương quốc tỏi giữa biển khơi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="section-header">
+            <div class="section-title">Thiên Đường Ẩm Thực</div>
+            <div class="section-subtitle">Đậm đà hương vị miền Trung</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="food-slider-viewport">
+            <button class="slider-btn prev-btn" onclick="prevSlide(true)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="nextSlide(true)"><i class="fas fa-chevron-right"></i></button>
+            <div class="food-track" id="foodTrack">
+                <div class="food-item"><img src="img/nemchua.jpg"><h4>Nem Chua</h4><span>Thanh Hóa</span></div>
+                <div class="food-item"><img src="img/miquang.webp"><h4>Mì Quảng</h4><span>Đà Nẵng</span></div>
+                <div class="food-item"><img src="img/bunbohue.webp"><h4>Bún Bò Huế</h4><span>Cố Đô</span></div>
+                <div class="food-item"><img src="img/caolau.webp"><h4>Cao Lầu</h4><span>Hội An</span></div>
+                <div class="food-item"><img src="img/comga.webp"><h4>Cơm Gà</h4><span>Tam Kỳ</span></div>
+                <div class="food-item"><img src="img/banhbeo.webp"><h4>Bánh Bèo</h4><span>Miền Trung</span></div>
+                <div class="food-item"><img src="img/nemlui.webp"><h4>Nem Lụi</h4><span>Huế</span></div>
+                <div class="food-item"><img src="img/banhcanh.webp"><h4>Bánh Canh</h4><span>Quảng Bình</span></div>
+                <div class="food-item"><img src="img/beothui.webp"><h4>Bê Thui</h4><span>Cầu Mống</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Lễ Hội Văn Hóa</div>
+            <div class="section-subtitle">Rực rỡ sắc màu</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="festival-grid">
+            <div class="festival-card" onclick="showModal('phaohoa')">
+                <img src="img/lehoiphaohoa.webp" alt="Pháo hoa">
+                <div class="festival-info">
+                    <h3>Lễ Hội Pháo Hoa Quốc Tế</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Đà Nẵng</p>
+                    <p>Màn trình diễn ánh sáng đẳng cấp thế giới bên sông Hàn.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('festhue')">
+                <img src="img/festivalhue.webp" alt="Fest Huế">
+                <div class="festival-info">
+                    <h3>Festival Huế</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Huế</p>
+                    <p>Tôn vinh văn hóa di sản, Nhã nhạc cung đình.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('kate')">
+                <img src="img/lehoikate.webp" alt="Kate">
+                <div class="festival-info">
+                    <h3>Lễ Hội Katê</h3>
+                    <p><i class="fas fa-praying-hands"></i> Ninh Thuận</p>
+                    <p>Lễ hội lớn nhất của người Chăm tại các tháp cổ.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('caungu')">
+                <img src="img/lehoicaungu.jpg" alt="Cầu Ngư">
+                <div class="festival-info">
+                    <h3>Lễ Hội Cầu Ngư</h3>
+                    <p><i class="fas fa-ship"></i> Ven biển miền Trung</p>
+                    <p>Tục thờ Cá Ông, cầu mong mưa thuận gió hòa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content" style="justify-content: center; border: none; text-align: center;">
+            <div class="footer-col">
+                <h3>Về chúng tôi</h3>
+                <p>Website du lịch lớp 12T1 - Tổ 4</p>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Trang Chủ</span></a>
+        <a href="mien-bac.html" class="nav-item"><i class="fas fa-mountain"></i><span>Miền Bắc</span></a>
+        <a href="mien-trung.html" class="nav-item active"><i class="fas fa-gopuram"></i><span>Miền Trung</span></a>
+        <a href="mien-nam.html" class="nav-item"><i class="fas fa-water"></i><span>Miền Nam</span></a>
+        <a href="bien-dao.html" class="nav-item"><i class="fas fa-anchor"></i><span>Biển Đảo</span></a>
+    </div>
+    <div id="infoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <div class="close-zoom-btn" onclick="goBackHistory()">&times;</div>
+            <div class="modal-scroll-container">
+                <div class="modal-left">
+                    <img id="modalImg" class="modal-circle-img" src="">
+                    <h3 id="modalCaption" style="margin-top:10px; color:var(--primary-color); font-weight:bold; text-transform:uppercase;"></h3>
+                </div>
+                <div class="modal-right">
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="zoomModal" class="zoom-modal" onclick="this.style.display='none'">
+        <span class="close-zoom">&times;</span>
+        <img class="zoom-modal-content" id="zoomedImg">
+    </div>
+    <script>
+        const locationData = {
+            "hoian": { title: "Phố Cổ Hội An", subtitle: "Nơi Thời Gian Ngưng Đọng", image: "img/phocohoian1.jpg", content: `<h3>1. Giới thiệu</h3><p>Hội An mê hoặc du khách bởi vẻ đẹp hoài cổ của những ngôi nhà mái ngói rêu phong và giàn hoa giấy rực rỡ. Kiến trúc nơi đây là bản giao hưởng văn hóa Việt - Nhật - Hoa độc đáo, được UNESCO công nhận là Di sản văn hóa thế giới.</p><img src="img/chucau.webp" class="highlight-img" alt="Chùa Cầu Hội An" height=200px><h3>2. Trải nghiệm không thể bỏ lỡ</h3><ul><li><strong>Chùa Cầu:</strong> Biểu tượng của Hội An, minh chứng cho sự giao lưu văn hóa Nhật Bản từ thế kỷ 17.</li><li><strong>Thả đèn hoa đăng:</strong> Trải nghiệm lung linh trên sông Hoài vào những đêm 14 âm lịch hàng tháng.</li><li><strong>May đo siêu tốc:</strong> Đặt may một bộ vest hoặc váy lụa và lấy ngay chỉ trong vài giờ.</li></ul><h3>3. Ẩm thực Phố Hội</h3><p>Thưởng thức <strong>Cao Lầu</strong> trứ danh, Cơm gà Bà Buội, và Bánh mì Phượng - món ăn được mệnh danh là bánh mì ngon nhất thế giới.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/hoian-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/hoian-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/hoian-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/hoian-gallery-4.jpg"></div></div>` },
+            "bana": { title: "Bà Nà Hills", subtitle: "Châu Âu Thu Nhỏ", image: "img/banahills.jpg", content: `<h3>1. Giới thiệu</h3><p>Nằm trên đỉnh núi Chúa ở độ cao 1.487m, Bà Nà Hills được mệnh danh là "đường lên tiên cảnh" với khí hậu 4 mùa trong một ngày. Nơi đây sở hữu Làng Pháp cổ kính và nhiều kỷ lục thế giới.</p><img src="img/cauvang.webp" class="highlight-img" alt="Cầu Vàng"><h3>2. Điểm đến biểu tượng</h3><ul><li><strong>Cầu Vàng (Golden Bridge):</strong> Đôi bàn tay khổng lồ nâng đỡ dải lụa vàng giữa mây trời, hiện tượng du lịch toàn cầu.</li><li><strong>Làng Pháp:</strong> Tái hiện không gian kiến trúc Gothic lãng mạn của nước Pháp thế kỷ 19.</li><li><strong>Hầm rượu Debay:</strong> Công trình xuyên lòng núi gần 100 năm tuổi của người Pháp.</li></ul><h3>3. Trải nghiệm</h3><p>Thưởng thức tiệc buffet Á - Âu trên đỉnh núi, tham gia Lễ hội bia B'estival sôi động và vui chơi tại Fantasy Park.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/banahills.jpg"></div><div class="modal-gallery-item"><img src="img/banahills2.jpg"></div><div class="modal-gallery-item"><img src="img/banahills3.jpg"></div><div class="modal-gallery-item"><img src="img/banahills4.jpg"></div></div>` },
+            "myson": { title: "Thánh Địa Mỹ Sơn", subtitle: "Dấu Ấn Chăm Pa Cổ", image: "img/thanhdiamyson5.jpg", content: `<h3>1. Giới thiệu</h3><p>Ẩn mình trong thung lũng Duy Xuyên, Thánh địa Mỹ Sơn là quần thể di tích đền tháp Chăm Pa lộng lẫy và bí ẩn nhất Việt Nam. Đây từng là nơi tổ chức cúng tế của các vương triều Chăm Pa trong suốt nhiều thế kỷ.</p><img src="img/dieuapsara.webp" class="highlight-img" alt="Múa Apsara" height=200px><h3>2. Kiến trúc & Văn hóa</h3><ul><li><strong>Tháp Kalan:</strong> Kỹ thuật xây dựng bằng gạch nung bí ẩn, không dùng chất kết dính nhưng vẫn trường tồn với thời gian.</li><li><strong>Vũ điệu Apsara:</strong> Thưởng thức điệu múa tiên nữ mềm mại, uyển chuyển ngay dưới chân tháp cổ.</li><li><strong>Bình minh Mỹ Sơn:</strong> Thời khắc mặt trời mọc sau những ngọn tháp cổ tạo nên khung cảnh huyền ảo khó quên.</li></ul><h3>3. Đặc sản địa phương</h3><p>Gần khu vực Mỹ Sơn, du khách có thể thưởng thức <strong>Mì Quảng Phú Chiêm</strong> và Bê thui Cầu Mống trứ danh của đất Quảng.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/thanhdiamyson5.jpg"></div><div class="modal-gallery-item"><img src="img/thanhdiamyson4.jpg"></div><div class="modal-gallery-item"><img src="img/thanhdiamyson3.jpg"></div><div class="modal-gallery-item"><img src="img/thanhdiamyson2.webp"></div></div>` },
+            "phongnha": { title: "Phong Nha - Kẻ Bàng", subtitle: "Vương Quốc Hang Động", image: "img/phongnha5.jpg", content: `<h3>1. Giới thiệu</h3><p>Di sản thiên nhiên thế giới Phong Nha - Kẻ Bàng sở hữu hệ thống núi đá vôi cổ nhất châu Á (400 triệu năm). Nơi đây được ví như "Hoàng cung trong lòng đất" với vẻ đẹp tráng lệ của thạch nhũ.</p><img src="img/dongthienduong.webp" class="highlight-img" alt="Động Thiên Đường" height=200px><h3>2. Kỳ quan thiên nhiên</h3><ul><li><strong>Động Phong Nha:</strong> Đi thuyền trên sông Son để vào động, chiêm ngưỡng 7 cái nhất như sông ngầm dài nhất và hồ nước ngầm đẹp nhất.</li><li><strong>Hang Sơn Đoòng:</strong> Hang động lớn nhất thế giới, niềm tự hào của du lịch Việt Nam.</li><li><strong>Sông Chày - Hang Tối:</strong> Trải nghiệm tắm bùn khoáng tự nhiên và đu dây Zipline mạo hiểm.</li></ul><h3>3. Ẩm thực Quảng Bình</h3><p>Đừng quên thưởng thức Cháo canh cá lóc, Khoai deo và các món hải sản tươi sống từ biển Nhật Lệ.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/phongnha-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/phongnha-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/phongnha-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/phongnha-gallery-4.webp"></div></div>` },
+            "hue": { title: "Cố Đô Huế", subtitle: "Kinh Thành Vàng Son", image: "img/kinhthanhhue1.webp", content: `<h3>1. Giới thiệu</h3><p>Huế mộng mơ, từng là kinh đô của triều đại nhà Nguyễn. Nơi đây lưu giữ vẻ đẹp thâm trầm, cổ kính với đền đài, lăng tẩm và dòng sông Hương hiền hòa chảy qua thành phố.</p><img src="img/ngomon.webp" class="highlight-img" alt="Ngọ Môn Huế" height=200px><h3>2. Di sản Hoàng cung</h3><ul><li><strong>Đại Nội (Hoàng Thành):</strong> Nơi ở và làm việc của 13 đời vua Nguyễn với Ngọ Môn, Điện Thái Hòa uy nghiêm.</li><li><strong>Lăng Tẩm:</strong> Kiến trúc lăng Khải Định (Đông Tây kết hợp), Minh Mạng (uy nghiêm), Tự Đức (thơ mộng).</li><li><strong>Nhã nhạc cung đình:</strong> Thưởng thức âm nhạc bác học trên sông Hương về đêm.</li></ul><h3>3. Ẩm thực Cung đình & Dân gian</h3><p>Tinh hoa ẩm thực Huế hội tụ trong Bún bò Huế, Cơm hến, các loại bánh bèo-nậm-lọc và đặc biệt là <strong>Chè Huế</strong> 36 món.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/thanhnhaho.jpg"></div><div class="modal-gallery-item"><img src="img/thanhnhaho2.webp"></div><div class="modal-gallery-item"><img src="img/thanhnhaho3.jpg"></div><div class="modal-gallery-item"><img src="img/thanhnhaho4.jpg"></div></div>` },
+            "lyson": { title: "Đảo Lý Sơn", subtitle: "Vương Quốc Tỏi", image: "img/daolyson11.webp", content: `<h3>1. Giới thiệu</h3><p>Huyện đảo Lý Sơn (Quảng Ngãi) là vết tích còn lại của 5 ngọn núi lửa đã tắt hàng triệu năm. Hòn đảo nổi tiếng với màu nước biển xanh ngọc bích và những cánh đồng tỏi bạt ngàn trên đất nham thạch.</p><img src="img/congtovo.webp" class="highlight-img" alt="Cổng Tò Vò" height=200px><h3>2. Điểm check-in tuyệt đẹp</h3><ul><li><strong>Cổng Tò Vò:</strong> Vòm đá nham thạch tự nhiên đẹp nhất Việt Nam, nơi ngắm hoàng hôn cực phẩm.</li><li><strong>Đỉnh Thới Lới:</strong> Ngọn núi cao nhất đảo, nhìn xuống toàn cảnh biển trời bao la và cột cờ chủ quyền.</li><li><strong>Đảo Bé (An Bình):</strong> Được ví như Maldives của Việt Nam với bãi cát trắng mịn và rạn san hô nguyên sơ.</li></ul><h3>3. Đặc sản biển đảo</h3><p>Phải thử <strong>Gỏi tỏi Lý Sơn</strong>, Cua Huỳnh Đế, Ốc xà cừ và mua Tỏi cô đơn về làm quà.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/lyson-gallery-1.jfif"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-2.jpg"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-3.jpg"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-5.webp"></div></div>` },
+            "phaohoa": { title: "Lễ Hội Pháo Hoa Quốc Tế", subtitle: "Đà Nẵng", image: "img/lehoiphaohoa.webp", content: `<h3>1. Giới thiệu</h3><p>Sự kiện thường niên lớn nhất Đà Nẵng, quy tụ các đội pháo hoa hàng đầu thế giới tranh tài. Bầu trời sông Hàn rực sáng trong những màn trình diễn ánh sáng và âm nhạc đỉnh cao.</p><h3>2. Trải nghiệm</h3><p>Du khách có thể ngắm pháo hoa từ khán đài, trên du thuyền sông Hàn hoặc các khách sạn cao tầng ven sông, tận hưởng không khí lễ hội sôi động kéo dài suốt mùa hè.</p>` },
+            "festhue": { title: "Festival Huế", subtitle: "Di Sản Văn Hóa & Hội Nhập", image: "img/festivalhue.webp", content: `<h3>1. Giới thiệu</h3><p>Lễ hội văn hóa nghệ thuật quy mô quốc gia và quốc tế, tổ chức 2 năm một lần (năm chẵn). Đây là nơi tôn vinh các giá trị văn hóa truyền thống của vùng đất Cố đô.</p><h3>2. Hoạt động đặc sắc</h3><p>Đêm Hoàng Cung, Lễ tế Nam Giao, Lễ hội Áo dài và các chương trình biểu diễn nghệ thuật đường phố đa sắc màu từ các đoàn nghệ thuật quốc tế.</p>` },
+            "kate": { title: "Lễ Hội Katê", subtitle: "Văn Hóa Chăm - Ninh Thuận", image: "img/lehoikate.webp", content: `<h3>1. Giới thiệu</h3><p>Lễ hội quan trọng nhất của đồng bào Chăm theo đạo Bà La Môn, diễn ra vào tháng 7 lịch Chăm (khoảng tháng 10 dương lịch) tại tháp Po Klong Garai.</p><h3>2. Nghi thức</h3><p>Lễ rước y trang, lễ tắm tượng thần và các điệu múa Chăm truyền thống trong tiếng kèn Saranai và trống Ginăng huyền bí.</p>` },
+            "caungu": { title: "Lễ Hội Cầu Ngư", subtitle: "Văn Hóa Biển Miền Trung", image: "img/lehoicaungu.jpg", content: `<h3>1. Tín ngưỡng thờ Cá Ông</h3><p>Lễ hội lớn nhất của ngư dân các tỉnh ven biển miền Trung, cầu mong mưa thuận gió hòa, tôm cá đầy khoang. Cá Ông (cá Voi) được xem là vị thần hộ mệnh giữa biển khơi.</p><h3>2. Phần hội</h3><p>Hát bả trạo (loại hình diễn xướng dân gian tái hiện cảnh chèo thuyền), đua thuyền trên biển và các trò chơi dân gian sôi nổi.</p>` }
+        };
+
+        const banners = document.querySelectorAll('.banner-background img');
+        let bIndex = 0;
+        setInterval(() => { banners[bIndex].classList.remove('active'); bIndex = (bIndex + 1) % banners.length; banners[bIndex].classList.add('active'); }, 5000);
+
+        const track = document.getElementById('foodTrack');
+        const itemWidth = 300; 
+        let isAnimating = false;
+        let autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+        let restartTimer;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) nextSlide(true);
+            if (touchEndX - touchStartX > 50) prevSlide(true);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            clearTimeout(restartTimer);
+            restartTimer = setTimeout(() => {
+                autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+            }, 3000);
+        }
+
+        function nextSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            setTimeout(() => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                isAnimating = false;
+            }, 500);
+        }
+
+        function prevSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'none';
+            track.prepend(track.lastElementChild);
+            track.style.transform = `translateX(-${itemWidth}px)`;
+            
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+                track.style.transform = 'translateX(0)';
+                setTimeout(() => { isAnimating = false; }, 500);
+            }, 20);
+        }
+
+        const menuIcon = document.querySelector('.mobile-menu-icon');
+        const navMenu = document.querySelector('.header-menu');
+        if(menuIcon) {
+            menuIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if(navMenu.classList.contains('active')){
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        function showModal(id) {
+            const data = locationData[id];
+            if(!data) return;
+            document.getElementById('modalBody').innerHTML = `<h2>${data.title}</h2>` + data.content;
+            document.getElementById('modalImg').src = data.image;
+            document.getElementById('modalCaption').innerText = data.subtitle;
+            const modal = document.getElementById('infoModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
+            document.querySelectorAll('#modalBody img').forEach(img => { img.onclick = () => openZoomModal(img.src); });
+            
+            history.pushState({modalOpen: true}, null, "");
+        }
+
+        window.addEventListener('popstate', function(event) {
+            const modal = document.getElementById('infoModal');
+            if (modal.style.display === 'flex') {
+                const modalOverlay = document.getElementById('infoModal');
+                modalOverlay.style.opacity = '0';
+                setTimeout(() => { modalOverlay.style.display = 'none'; }, 300);
+            }
+        });
+
+        function handleOverlayClick(e) { 
+            if(e.target.id === 'infoModal') {
+                goBackHistory();
+            } 
+        }
+
+        function goBackHistory() {
+            history.back();
+        }
+
+        function closeModalDirect() {
+            const modal = document.getElementById('infoModal');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function openZoomModal(src) { document.getElementById('zoomedImg').src = src; document.getElementById('zoomModal').style.display = 'flex'; }
+                document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) || (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83))) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

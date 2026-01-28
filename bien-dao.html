@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biển Đảo Quê Hương - Tổ Quốc Nơi Đầu Sóng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Travel VietNam</div>
+        <div class="header-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="mien-bac.html">Miền Bắc</a>
+            <a href="mien-trung.html">Miền Trung</a>
+            <a href="mien-nam.html">Miền Nam</a>
+            <a href="bien-dao.html" class="active">Biển Đảo</a>
+        </div>
+        <i class="fas fa-bars mobile-menu-icon"></i>
+    </header>
+    <div class="region-banner">
+        <div class="banner-background" id="bannerImages">
+            <img src="img/truongsa3.jpg" class="active" alt="Trường Sa">
+            <img src="img/hoangsa1.png" alt="Hoàng Sa">
+            <img src="img/culaocham5.jpg" alt="Cù Lao Chàm">
+            <img src="img/daosongtutay.jpg" alt="Song Tử Tây">
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Biển Đảo Việt Nam</h1>
+            <p>Hoàng Sa - Trường Sa: Máu thịt thiêng liêng</p>
+        </div>
+    </div>
+    <div class="regions-nav-container">
+        <div class="regions-nav">
+            <a href="mien-bac.html" class="region-btn">Miền Bắc</a>
+            <a href="mien-trung.html" class="region-btn">Miền Trung</a>
+            <a href="mien-nam.html" class="region-btn">Miền Nam</a>
+            <a href="bien-dao.html" class="region-btn active-region">Biển Đảo</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Chủ Quyền Biển Đảo</div>
+            <div class="section-subtitle">Tự hào Việt Nam</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="card-grid">
+            <div class="card" onclick="showModal('hoangsa')">
+                <img src="img/hoangsa1.jpg" alt="Hoàng Sa">
+                <div class="card-info">
+                    <h3>Quần Đảo Hoàng Sa</h3>
+                    <p><i class="fas fa-flag"></i> Huyện đảo thuộc Đà Nẵng.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('truongsa')">
+                <img src="img/truongsa3.jpg" alt="Trường Sa">
+                <div class="card-info">
+                    <h3>Quần Đảo Trường Sa</h3>
+                    <p><i class="fas fa-anchor"></i> Nơi đầu sóng ngọn gió (Khánh Hòa).</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('phuquoc')">
+                <img src="img/phuquoc.jpg" alt="Phú Quốc">
+                <div class="card-info">
+                    <h3>Đảo Ngọc Phú Quốc</h3>
+                    <p><i class="fas fa-gem"></i> Thiên đường nghỉ dưỡng.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('condao')">
+                <img src="img/con-dao.jpg" alt="Côn Đảo">
+                <div class="card-info">
+                    <h3>Côn Đảo</h3>
+                    <p><i class="fas fa-history"></i> Di tích lịch sử oai hùng.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('culaocham')">
+                <img src="img/culaocham1.jpg" alt="Cù Lao Chàm">
+                <div class="card-info">
+                    <h3>Cù Lao Chàm</h3>
+                    <p><i class="fas fa-fish"></i> Khu dự trữ sinh quyển thế giới.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('lyson')">
+                <img src="img/daolyson1.jfif" alt="Lý Sơn">
+                <div class="card-info">
+                    <h3>Đảo Lý Sơn</h3>
+                    <p><i class="fas fa-volcano"></i> Đảo tiền tiêu (Quảng Ngãi).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="section-header">
+            <div class="section-title">Hải Sản Tươi Ngon</div>
+            <div class="section-subtitle">Quà tặng từ đại dương</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="food-slider-viewport">
+            <button class="slider-btn prev-btn" onclick="prevSlide(true)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="nextSlide(true)"><i class="fas fa-chevron-right"></i></button>
+            <div class="food-track" id="foodTrack">
+                <div class="food-item"><img src="img/baongu.webp"><h4>Bào Ngư</h4><span>Bạch Long Vĩ</span></div>
+                <div class="food-item"><img src="img/cuahuynhde.webp"><h4>Cua Huỳnh Đế</h4><span>Đảo Phú Quý</span></div>
+                <div class="food-item"><img src="img/goicasich.webp"><h4>Gỏi Cá Trích</h4><span>Phú Quốc</span></div>
+                <div class="food-item"><img src="img/tomhum.webp"><h4>Tôm Hùm</h4><span>Bình Ba</span></div>
+                <div class="food-item"><img src="img/nhumbien.jfif"><h4>Nhum Biển</h4><span>Côn Đảo</span></div>
+                <div class="food-item"><img src="img/mucmotnang.webp"><h4>Mực Một Nắng</h4><span>Phan Thiết</span></div>
+                <div class="food-item"><img src="img/haisam.jpg"><h4>Hải Sâm</h4><span>Trường Sa</span></div>
+                 <div class="food-item"><img src="img/toiden.webp"><h4>Tỏi Đen</h4><span>Lý Sơn</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Lễ Hội Biển Đảo</div>
+            <div class="section-subtitle">Văn hóa ngư dân</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="festival-grid">
+            <div class="festival-card" onclick="showModal('khaole')">
+                <img src="img/lekhaole.webp" alt="Lễ Khao Lề">
+                <div class="festival-info">
+                    <h3>Lễ Khao Lề Thế Lính</h3>
+                    <p><i class="fas fa-ship"></i> Lý Sơn</p>
+                    <p>Tri ân hùng binh Hoàng Sa bắc hải.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('caungu')">
+                <img src="img/lehoicaungu.jpg" alt="Cầu Ngư">
+                <div class="festival-info">
+                    <h3>Lễ Hội Cầu Ngư</h3>
+                    <p><i class="fas fa-fish"></i> Ven biển Việt Nam</p>
+                    <p>Thờ cá Ông, cầu mùa màng bội thu.</p>
+                </div>
+            </div>
+             <div class="festival-card" onclick="showModal('yengxao')">
+                <img src="img/lehoiyensao.webp" alt="Yến Sào">
+                <div class="festival-info">
+                    <h3>Lễ Hội Yến Sào</h3>
+                    <p><i class="fas fa-dove"></i> Khánh Hòa</p>
+                    <p>Tôn vinh nghề khai thác yến.</p>
+                </div>
+            </div>
+             <div class="festival-card" onclick="showModal('festivalbien')">
+                <img src="img/festivalbien.webp" alt="Festival Biển">
+                <div class="festival-info">
+                    <h3>Festival Biển Nha Trang</h3>
+                    <p><i class="fas fa-umbrella-beach"></i> Nha Trang</p>
+                    <p>Sự kiện du lịch biển tầm cỡ quốc tế.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content" style="justify-content: center; border: none; text-align: center;">
+            <div class="footer-col">
+                <h3>Về chúng tôi</h3>
+                <p>Website du lịch lớp 12T1 - Tổ 4</p>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Trang Chủ</span></a>
+        <a href="mien-bac.html" class="nav-item"><i class="fas fa-mountain"></i><span>Miền Bắc</span></a>
+        <a href="mien-trung.html" class="nav-item"><i class="fas fa-gopuram"></i><span>Miền Trung</span></a>
+        <a href="mien-nam.html" class="nav-item"><i class="fas fa-water"></i><span>Miền Nam</span></a>
+        <a href="bien-dao.html" class="nav-item active"><i class="fas fa-anchor"></i><span>Biển Đảo</span></a>
+    </div>
+    <div id="infoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <div class="close-zoom-btn" onclick="goBackHistory()">&times;</div>
+            <div class="modal-scroll-container">
+                <div class="modal-left">
+                    <img id="modalImg" class="modal-circle-img" src="">
+                    <h3 id="modalCaption" style="margin-top:10px; color:var(--primary-color); font-weight:bold; text-transform:uppercase;"></h3>
+                </div>
+                <div class="modal-right">
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="zoomModal" class="zoom-modal" onclick="this.style.display='none'">
+        <span class="close-zoom">&times;</span>
+        <img class="zoom-modal-content" id="zoomedImg">
+    </div>
+    <script>
+        const locationData = {
+            "hoangsa": { title: "Huyện Đảo Hoàng Sa", subtitle: "Đà Nẵng", image: "img/hoangsa1.jpg", content: `<h3>1. Vị trí & Địa lý</h3><p>Hoàng Sa là quần đảo san hô gồm hơn 30 đảo, đá, bãi cạn trên vùng biển rộng 15.000 km². Quần đảo chia làm 2 nhóm: Nhóm Lưỡi Liềm (phía Tây) và Nhóm An Vĩnh (phía Đông - gồm đảo Phú Lâm, đảo Cây...).</p><h3>2. Bằng chứng chủ quyền</h3><p>Việt Nam có đầy đủ bằng chứng lịch sử xác lập chủ quyền từ thời Chúa Nguyễn (Đội Hoàng Sa) đến thời vua Minh Mạng (cắm mốc, dựng bia). Đây là điểm án ngữ quan trọng kiểm soát tuyến hàng hải nhộn nhịp thứ 2 thế giới.</p><h3>3. Tài nguyên</h3><p>Vùng biển Hoàng Sa có trữ lượng hải sản lớn và tiềm năng dầu khí, photphat. Đây là ngư trường truyền thống bao đời nay của ngư dân Quảng Ngãi, Quảng Nam, Đà Nẵng.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/hoangsa-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/hoangsa-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/hoangsa-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/hoangsa-gallery-4.webp"></div></div>` },
+            "truongsa": { title: "Huyện Đảo Trường Sa", subtitle: "Khánh Hòa", image: "img/truongsa3.jpg", content: `<h3>1. Đời sống & Hệ sinh thái</h3><p>Trường Sa gồm hơn 100 đảo, đá, rạn san hô. Nơi đây có hệ sinh thái "ngân hàng gen" biển quý giá, là nơi sinh sản của rùa biển và hàng ngàn loài cá. Hệ thống hành chính gồm Thị trấn Trường Sa và 2 xã Song Tử Tây, Sinh Tồn.</p><img src="img/truongsa1.jpg" class="highlight-img" alt="Đảo Trường Sa Lớn"><h3>2. Sức sống mãnh liệt</h3><p>Mặc cho sóng gió khắc nghiệt, cây Bàng vuông và cây Phong ba vẫn xanh tốt, biểu tượng cho ý chí kiên cường của quân dân trên đảo.</p><h3>3. Cơ sở hạ tầng</h3><p>Các đảo hiện nay đã có điện năng lượng sạch, hệ thống lọc nước biển, trường học và chùa chiền. Đây là điểm tựa vững chắc giúp ngư dân vươn khơi bám biển.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/truongsa-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/truongsa-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/truongsa-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/truongsa-gallery-4.webp"></div></div>` },
+            "phuquoc": { title: "Đảo Ngọc Phú Quốc", subtitle: "Kiên Giang", image: "img/phuquoc.webp", content: `<h3>1. Giới thiệu</h3><p>Phú Quốc là đảo lớn nhất Việt Nam, nằm trong vịnh Thái Lan. Nơi đây được thiên nhiên ưu ái với những bãi biển cát trắng mịn màng, nước biển xanh ngọc bích và những khu rừng nguyên sinh bạt ngàn.</p><img src="img/phuquoc-grandworld.webp" class="highlight-img" alt="Grand World Phú Quốc" height=200px><h3>2. Điểm đến nổi bật</h3><ul><li><strong>VinWonders & Grand World:</strong> "Thành phố không ngủ" với các show diễn thực cảnh và kiến trúc Venice lãng mạn.</li><li><strong>Bãi Sao:</strong> Một trong những bãi biển đẹp nhất thế giới với cát trắng mịn như kem.</li><li><strong>Làng chài Hàm Ninh:</strong> Nơi ngắm bình minh và thưởng thức ghẹ tươi ngon giá rẻ.</li></ul><h3>3. Ẩm thực đặc sắc</h3><p>Không thể bỏ qua <strong>Bún quậy</strong>, Gỏi cá trích, Rượu sim và đặc biệt là Nước mắm Phú Quốc trứ danh.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/phuquoc-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/phuquoc-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/phuquoc-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/phuquoc-gallery-4.webp"></div></div>` },
+            "condao": { title: "Côn Đảo", subtitle: "Bà Rịa - Vũng Tàu", image: "img/con-dao.jpg", content: `<h3>1. Giới thiệu</h3><p>Từ "Địa ngục trần gian", Côn Đảo nay đã trở thành thiên đường du lịch nghỉ dưỡng và tâm linh. Nơi đây giữ được vẻ hoang sơ, yên bình hiếm có.</p><img src="img/nghiatranghangduong.webp" class="highlight-img" alt="Nghĩa trang Hàng Dương"><h3>2. Lịch sử & Tâm linh</h3><ul><li><strong>Hệ thống nhà tù Côn Đảo:</strong> Di tích lịch sử quốc gia đặc biệt, nơi ghi dấu sự hy sinh kiên cường của các chiến sĩ cách mạng.</li><li><strong>Nghĩa trang Hàng Dương:</strong> Nơi an nghỉ của chị Võ Thị Sáu và hàng vạn anh hùng liệt sĩ. Viếng mộ cô Sáu vào ban đêm là nét văn hóa tâm linh đặc biệt.</li></ul><h3>3. Thiên nhiên & Ẩm thực</h3><p>Tắm biển bãi Đầm Trầu (ngắm máy bay hạ cánh sát đầu người), lặn ngắm san hô. Đặc sản: Mứt hạt bàng, Ốc vú nàng.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/condao-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/condao-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/condao-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/condao-gallery-4.webp"></div></div>` },
+            "culaocham": { title: "Cù Lao Chàm", subtitle: "Quảng Nam", image: "img/culaocham5.webp", content: `<h3>1. Khu dự trữ sinh quyển thế giới</h3><p>Cách Hội An 15km, Cù Lao Chàm nổi tiếng với sự đa dạng sinh học đáng nể. Nơi đây đi đầu trong quy tắc "Sống Xanh": Nói KHÔNG với túi nilon và ống hút nhựa.</p><img src="img/lanngamsanho.jpg" class="highlight-img" alt="Lặn ngắm san hô" height=200px><h3>2. Trải nghiệm thuần tự nhiên</h3><ul><li><strong>Lặn ngắm san hô:</strong> Trải nghiệm đi bộ dưới đáy biển hoặc snorkeling ngắm nhìn vương quốc sinh vật biển rực rỡ.</li><li><strong>Giếng Cổ Chăm:</strong> Nghe truyền thuyết uống nước giếng để "thoát ế".</li><li><strong>Eo Gió:</strong> Điểm check-in ngắm bình minh và hoàng hôn tuyệt đẹp trên đảo.</li></ul><h3>3. Đặc sản</h3><p>Cua đá Cù Lao Chàm (được dán nhãn sinh thái), Mực một nắng, Rau rừng chấm mắm nêm.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/culaocham-gallery-1.jpg"></div><div class="modal-gallery-item"><img src="img/culaocham-gallery-2.jpg"></div><div class="modal-gallery-item"><img src="img/culaocham-gallery-3.jpg"></div><div class="modal-gallery-item"><img src="img/culaocham-gallery-4.jpg"></div></div>` },
+            "lyson": { title: "Đảo Lý Sơn", subtitle: "Quảng Ngãi", image: "img/daolyson.jfif", content: `<h3>1. Giới thiệu</h3><p>Lý Sơn là bảo tàng sống động về lịch sử chủ quyền biển đảo (quê hương của Hải đội Hoàng Sa) và là công viên địa chất núi lửa độc đáo giữa biển khơi.</p><img src="img/congtovo.webp" class="highlight-img" alt="Cổng Tò Vò" height=200px><h3>2. Điểm đến không thể bỏ qua</h3><ul><li><strong>Cổng Tò Vò:</strong> Vòm đá nham thạch tự nhiên đẹp nhất Việt Nam.</li><li><strong>Đỉnh Thới Lới:</strong> Ngắm nhìn miệng núi lửa cổ và cột cờ chủ quyền sừng sững hướng ra biển Đông.</li><li><strong>Hang Câu:</strong> Vách đá dựng đứng hùng vĩ bên bờ biển, kiệt tác của sóng và gió.</li></ul><h3>3. Vương quốc tỏi</h3><p>Tỏi Lý Sơn (đặc biệt là tỏi cô đơn) nổi tiếng thơm, cay dịu. Ngoài ra còn có Gỏi tỏi, Chả cá Lý Sơn.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/lyson-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-2.jpg"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-3.jpg"></div><div class="modal-gallery-item"><img src="img/lyson-gallery-4.webp"></div></div>` },
+            "khaole": { title: "Lễ Khao Lề Thế Lính", subtitle: "Huyện đảo Lý Sơn", image: "img/lekhaole.webp", content: `<h3>1. Ý nghĩa lịch sử</h3><p>Diễn ra vào tháng 2, 3 âm lịch. Đây là nghi lễ tri ân những hùng binh Hoàng Sa năm xưa đã vâng lệnh vua ra đi cắm mốc chủ quyền và mãi mãi không về ("Hoàng Sa đi có về không").</p><h3>2. Nghi thức độc đáo</h3><p>Người dân làm những chiếc thuyền bằng giấy, đặt hình nhân thế mạng vào trong rồi thả trôi ra biển, cầu mong linh hồn các chiến sĩ được siêu thoát và bình an cho người đi biển hiện tại.</p>` },
+            "caungu": { title: "Lễ Hội Cầu Ngư", subtitle: "Văn hóa biển Việt Nam", image: "img/lehoicaungu.jpg", content: `<h3>1. Tín ngưỡng thờ Cá Ông</h3><p>Đây là lễ hội lớn nhất của cư dân ven biển. Ngư dân tôn sùng cá Voi (Cá Ông) là vị thần Nam Hải, người luôn giúp đỡ tàu thuyền vượt qua bão tố.</p><h3>2. Hoạt động lễ hội</h3><p>Gồm Lễ Nghinh Ông (rước kiệu ra biển), Lễ tế tiền hiền và phần hội với các trò chơi dân gian: đua thuyền, lắc thúng, hát bả trạo.</p>` },
+            "yengxao": { title: "Lễ Hội Yến Sào", subtitle: "Nha Trang - Khánh Hòa", image: "img/lehoiyensao.webp", content: `<h3>1. Giới thiệu</h3><p>Lễ hội tôn vinh ngành nghề khai thác yến sào truyền thống, một sản vật quý giá ("vàng trắng") mà thiên nhiên ban tặng cho xứ Trầm Hương.</p><h3>2. Hoạt động</h3><p>Diễn ra các hoạt động văn hóa nghệ thuật, triển lãm sản phẩm yến sào, hội thảo khoa học và tour du lịch tham quan các đảo yến tự nhiên.</p>` },
+            "festivalbien": { title: "Festival Biển Nha Trang", subtitle: "Khánh Hòa", image: "img/festivalbien.webp", content: `<h3>1. Sự kiện quốc tế</h3><p>Được tổ chức định kỳ 2 năm một lần vào mùa hè. Đây là thương hiệu du lịch uy tín, thu hút đông đảo du khách trong nước và quốc tế.</p><h3>2. Rực rỡ sắc màu</h3><p>Thành phố biển sôi động suốt cả tuần lễ với bắn pháo hoa, lễ hội ánh sáng, triển lãm ảnh đẹp, thi bơi biển và các chương trình ca nhạc hoành tráng.</p>` }
+        };
+
+        const banners = document.querySelectorAll('.banner-background img');
+        let bIndex = 0;
+        setInterval(() => { banners[bIndex].classList.remove('active'); bIndex = (bIndex + 1) % banners.length; banners[bIndex].classList.add('active'); }, 5000);
+
+        const track = document.getElementById('foodTrack');
+        const itemWidth = 300; 
+        let isAnimating = false;
+        let autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+        let restartTimer;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) nextSlide(true);
+            if (touchEndX - touchStartX > 50) prevSlide(true);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            clearTimeout(restartTimer);
+            restartTimer = setTimeout(() => {
+                autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+            }, 3000);
+        }
+
+        function nextSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            setTimeout(() => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                isAnimating = false;
+            }, 500);
+        }
+
+        function prevSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'none';
+            track.prepend(track.lastElementChild);
+            track.style.transform = `translateX(-${itemWidth}px)`;
+            
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+                track.style.transform = 'translateX(0)';
+                setTimeout(() => { isAnimating = false; }, 500);
+            }, 20);
+        }
+
+        const menuIcon = document.querySelector('.mobile-menu-icon');
+        const navMenu = document.querySelector('.header-menu');
+        if(menuIcon) {
+            menuIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if(navMenu.classList.contains('active')){
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        function showModal(id) {
+            const data = locationData[id];
+            if(!data) return;
+            document.getElementById('modalBody').innerHTML = `<h2>${data.title}</h2>` + data.content;
+            document.getElementById('modalImg').src = data.image;
+            document.getElementById('modalCaption').innerText = data.subtitle;
+            const modal = document.getElementById('infoModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
+            document.querySelectorAll('#modalBody img').forEach(img => { img.onclick = () => openZoomModal(img.src); });
+            
+            history.pushState({modalOpen: true}, null, "");
+        }
+
+        window.addEventListener('popstate', function(event) {
+            const modal = document.getElementById('infoModal');
+            if (modal.style.display === 'flex') {
+                const modalOverlay = document.getElementById('infoModal');
+                modalOverlay.style.opacity = '0';
+                setTimeout(() => { modalOverlay.style.display = 'none'; }, 300);
+            }
+        });
+
+        function handleOverlayClick(e) { 
+            if(e.target.id === 'infoModal') {
+                goBackHistory();
+            } 
+        }
+
+        function goBackHistory() {
+            history.back();
+        }
+
+        function closeModalDirect() {
+            const modal = document.getElementById('infoModal');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function openZoomModal(src) { document.getElementById('zoomedImg').src = src; document.getElementById('zoomModal').style.display = 'flex'; }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) || (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83))) {
+                event.preventDefault();
+                return false;
+            }
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khám Phá Miền Bắc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Travel VietNam</div>
+        <div class="header-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="mien-bac.html" class="active">Miền Bắc</a>
+            <a href="mien-trung.html">Miền Trung</a>
+            <a href="mien-nam.html">Miền Nam</a>
+            <a href="bien-dao.html">Biển Đảo</a>
+        </div>
+        <i class="fas fa-bars mobile-menu-icon"></i>
+    </header>
+    <div class="region-banner">
+        <div class="banner-background" id="bannerImages">
+            <img src="img/hoguom.jpg" class="active" alt="Hà Nội">
+            <img src="img/halong2.jpg" alt="Hạ Long">
+            <img src="img/mucangchai1.jpg" alt="Tây Bắc">
+            <img src="img/trangan.jpg" alt="Ninh Bình">
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Hành Trình Phương Bắc</h1>
+            <p>Tinh Hoa Văn Hóa & Thiên Nhiên Hùng Vĩ</p>
+        </div>
+    </div>
+    <div class="regions-nav-container">
+        <div class="regions-nav">
+            <a href="mien-bac.html" class="region-btn active-region">Miền Bắc</a>
+            <a href="mien-trung.html" class="region-btn">Miền Trung</a>
+            <a href="mien-nam.html" class="region-btn">Miền Nam</a>
+            <a href="bien-dao.html" class="region-btn">Biển Đảo</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Điểm Đến Nổi Bật</div>
+            <div class="section-subtitle">Danh thắng ngàn năm</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="card-grid">
+            <div class="card" onclick="showModal('hanoi')">
+                <img src="img/hoguom.jpg" alt="Hà Nội">
+                <div class="card-info">
+                    <h3>Thủ Đô Hà Nội</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Trái tim hồng của cả nước.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('halong')">
+                <img src="img/halong2.jpg" alt="Hạ Long">
+                <div class="card-info">
+                    <h3>Vịnh Hạ Long</h3>
+                    <p><i class="fas fa-water"></i> Kỳ quan thiên nhiên thế giới.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('sapa')">
+                <img src="img/fansipan.jpg" alt="Sapa">
+                <div class="card-info">
+                    <h3>Sapa - Lào Cai</h3>
+                    <p><i class="fas fa-cloud"></i> Thành phố trong sương mờ ảo.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('ninhbinh')">
+                <img src="img/trangan.jpg" alt="Ninh Bình">
+                <div class="card-info">
+                    <h3>Tràng An - Ninh Bình</h3>
+                    <p><i class="fas fa-mountain"></i> Vịnh Hạ Long trên cạn.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('mocchau')">
+                <img src="img/mocchau1.jpg" alt="Mộc Châu">
+                <div class="card-info">
+                    <h3>Cao Nguyên Mộc Châu</h3>
+                    <p><i class="fas fa-leaf"></i> Mùa hoa cải, đồi chè xanh mướt.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('bangioc')">
+                <img src="img/thacbangioc5.jpg" alt="Bản Giốc">
+                <div class="card-info">
+                    <h3>Thác Bản Giốc</h3>
+                    <p><i class="fas fa-water"></i> Thác nước hùng vĩ nhất biên cương.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="section-header">
+            <div class="section-title">Thiên Đường Ẩm Thực</div>
+            <div class="section-subtitle">Hương vị truyền thống</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="food-slider-viewport">
+            <button class="slider-btn prev-btn" onclick="prevSlide(true)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="nextSlide(true)"><i class="fas fa-chevron-right"></i></button>
+            <div class="food-track" id="foodTrack">
+                <div class="food-item"><img src="img/pho.jpg"><h4>Phở Hà Nội</h4><span>Quốc hồn quốc túy</span></div>
+                <div class="food-item"><img src="img/buncha.jpg"><h4>Bún Chả</h4><span>Hương vị Kinh Kỳ</span></div>
+                <div class="food-item"><img src="img/chamuc.jpg"><h4>Chả Mực</h4><span>Đặc sản Hạ Long</span></div>
+                <div class="food-item"><img src="img/thangco.jpg"><h4>Thắng Cố</h4><span>Vùng cao Tây Bắc</span></div>
+                <div class="food-item"><img src="img/comchay.jpg"><h4>Cơm Cháy</h4><span>Ninh Bình</span></div>
+                <div class="food-item"><img src="img/banhcay.jfif"><h4>Bánh Cáy</h4><span>Thái Bình</span></div>
+                <div class="food-item"><img src="img/dauxanh.jpg"><h4>Bánh Đậu Xanh</h4><span>Hải Dương</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Lễ Hội Văn Hóa</div>
+            <div class="section-subtitle">Hồn thiêng sông núi</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="festival-grid">
+            <div class="festival-card" onclick="showModal('chuahuong')">
+                <img src="img/lehoichuahuong.jpg" alt="Chùa Hương">
+                <div class="festival-info">
+                    <h3>Lễ Hội Chùa Hương</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mỹ Đức, Hà Nội</p>
+                    <p>Hành trình về miền đất Phật mỗi độ xuân về.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('denhung')">
+                <img src="img/giôt.webp" alt="Đền Hùng">
+                <div class="festival-info">
+                    <h3>Giỗ Tổ Hùng Vương</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Phú Thọ</p>
+                    <p>Tín ngưỡng thờ cúng Hùng Vương thiêng liêng.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('hoilim')">
+                <img src="img/hoilim.jfif" alt="Hội Lim">
+                <div class="festival-info">
+                    <h3>Hội Lim</h3>
+                    <p><i class="fas fa-music"></i> Bắc Ninh</p>
+                    <p>Dân ca Quan Họ giao duyên đằm thắm.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('khauvai')">
+                <img src="img/chotinh.jfif" alt="Khâu Vai">
+                <div class="festival-info">
+                    <h3>Chợ Tình Khau Vai</h3>
+                    <p><i class="fas fa-heart"></i> Hà Giang</p>
+                    <p>Phiên chợ phong lưu dành cho người lỡ duyên.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('chophien')">
+                <img src="img/chophien.webp" alt="Chợ Phiên">
+                <div class="festival-info">
+                    <h3>Chợ Phiên Vùng Cao</h3>
+                    <p><i class="fas fa-store"></i> Tây Bắc</p>
+                    <p>Sắc màu văn hóa rực rỡ của đồng bào dân tộc.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('caumua')">
+                <img src="img/lehoicaumua.jpg" alt="Cầu Mưa">
+                <div class="festival-info">
+                    <h3>Lễ Hội Cầu Mưa</h3>
+                    <p><i class="fas fa-cloud-rain"></i> Mộc Châu</p>
+                    <p>Cầu mong mưa thuận gió hòa, mùa màng bội thu.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('mucangchai_fest')">
+                <img src="img/lehoimucangchai1.jpg" alt="Mùa Vàng">
+                <div class="festival-info">
+                    <h3>Lễ Hội Mùa Vàng</h3>
+                    <p><i class="fas fa-layer-group"></i> Mù Cang Chải</p>
+                    <p>Bay dù lượn trên những thảm lúa chín vàng.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('hoaban')">
+                <img src="img/lehoihoaban.jpg" alt="Hoa Ban">
+                <div class="festival-info">
+                    <h3>Lễ Hội Hoa Ban</h3>
+                    <p><i class="fas fa-flower"></i> Điện Biên</p>
+                    <p>Biểu tượng tình yêu thủy chung của núi rừng.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('hetcha')">
+                <img src="img/lehoihetcha.jpg" alt="Hết Chá">
+                <div class="festival-info">
+                    <h3>Lễ Hội Hết Chá</h3>
+                    <p><i class="fas fa-praying-hands"></i> Mộc Châu</p>
+                    <p>Tạ ơn trời đất và thầy mo, gắn kết bản làng.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content" style="justify-content: center; border: none; text-align: center;">
+            <div class="footer-col">
+                <h3>Về chúng tôi</h3>
+                <p>Website du lịch lớp 12T1 - Tổ 4</p>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Trang Chủ</span></a>
+        <a href="mien-bac.html" class="nav-item active"><i class="fas fa-mountain"></i><span>Miền Bắc</span></a>
+        <a href="mien-trung.html" class="nav-item"><i class="fas fa-gopuram"></i><span>Miền Trung</span></a>
+        <a href="mien-nam.html" class="nav-item"><i class="fas fa-water"></i><span>Miền Nam</span></a>
+        <a href="bien-dao.html" class="nav-item"><i class="fas fa-anchor"></i><span>Biển Đảo</span></a>
+    </div>
+    <div id="infoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <div class="close-zoom-btn" onclick="goBackHistory()">&times;</div>
+            <div class="modal-scroll-container">
+                <div class="modal-left">
+                    <img id="modalImg" class="modal-circle-img" src="">
+                    <h3 id="modalCaption" style="margin-top:10px; color:var(--primary-color); font-weight:bold; text-transform:uppercase;"></h3>
+                </div>
+                <div class="modal-right">
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="zoomModal" class="zoom-modal" onclick="this.style.display='none'">
+        <span class="close-zoom">&times;</span>
+        <img class="zoom-modal-content" id="zoomedImg">
+    </div>
+    <script>
+        const locationData = {
+            "hanoi": { title: "Thủ Đô Hà Nội", subtitle: "Hà Nội", image: "img/hoguom.jpg", content: `<h3>1. Giới thiệu</h3><p>Hà Nội – thủ đô ngàn năm văn hiến, là trung tâm chính trị, văn hóa và lịch sử của cả nước. Thành phố mang vẻ đẹp giao thoa giữa nét cổ kính của quá khứ và nhịp sống hiện đại. Hà Nội thu hút bởi Hồ Gươm yên bình, những con phố cổ rêu phong và hương hoa sữa nồng nàn mỗi độ thu về.</p><img src="img/phocohanoi.jpg" class="highlight-img" alt="Phố cổ Hà Nội" height=200px> <h3>2. Địa điểm tham quan nổi bật</h3><ul><li><strong>Hồ Gươm (Hồ Hoàn Kiếm):</strong> Biểu tượng của Hà Nội, gắn liền với truyền thuyết vua Lê trả gươm, là trái tim của thủ đô.</li><li><strong>Phố Cổ Hà Nội:</strong> Khu vực 36 phố phường với những con ngõ nhỏ, nhà cổ, phản ánh đời sống buôn bán sầm uất và văn hóa truyền thống.</li><li><strong>Văn Miếu – Quốc Tử Giám:</strong> Trường đại học đầu tiên của Việt Nam, biểu tượng cho truyền thống hiếu học.</li><li><strong>Lăng Chủ tịch Hồ Chí Minh:</strong> Công trình lịch sử thiêng liêng, nơi ghi dấu nhiều sự kiện quan trọng tại Quảng trường Ba Đình.</li></ul><h3>3. Ẩm thực Hà Nội</h3><p>Ẩm thực Hà Nội tinh tế, thanh đạm và cầu kỳ, phản ánh phong cách sống của người Tràng An.</p><ul><li><strong>Phở Hà Nội:</strong> Món ăn "quốc hồn quốc túy" với nước dùng thanh ngọt, bánh phở mềm, ăn kèm thịt bò hoặc gà.</li><li><strong>Bún chả:</strong> Sự kết hợp hài hòa giữa bún, chả nướng than hoa thơm lừng và nước chấm chua ngọt.</li><li><strong>Bún thang:</strong> Món ăn cầu kỳ, tinh tế với nhiều nguyên liệu như trứng, giò, thịt gà thái chỉ.</li></ul><h3>4. Văn hóa đặc trưng</h3><p>Người Hà Nội nổi tiếng với lối sống thanh lịch, nhẹ nhàng và coi trọng lễ nghĩa. Văn hóa thủ đô là sự kết hợp hài hòa giữa kiến trúc cổ truyền và kiến trúc Pháp, cùng đời sống tâm linh phong phú qua các lễ hội như hội Gióng, chùa Hương.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/hanoi1.jpg"></div><div class="modal-gallery-item"><img src="img/langbac.jpg"></div><div class="modal-gallery-item"><img src="img/quoctugiam.jpg"></div><div class="modal-gallery-item"><img src="img/pho.jpg"></div></div>` },
+            "halong": { title: "Vịnh Hạ Long", subtitle: "Quảng Ninh", image: "img/halong2.jpg", content: `<h3>1. Giới thiệu và vị trí địa lý</h3><p>Vịnh Hạ Long nằm ở phía Đông Bắc tỉnh Quảng Ninh, thuộc thành phố Hạ Long và một phần thành phố Cẩm Phả. Vịnh có diện tích khoảng 1.553 km² với gần 2.000 hòn đảo lớn nhỏ, chủ yếu là đảo đá vôi. Nhờ vẻ đẹp thiên nhiên kỳ vĩ và giá trị địa chất đặc biệt, Vịnh Hạ Long đã được UNESCO công nhận là Di sản Thiên nhiên Thế giới, trở thành điểm du lịch nổi tiếng của Việt Nam.</p><img src="img/hontrongmai.jpg" class="highlight-img" alt="Hòn Trống Mái" height=200px> <h3>2. Những địa điểm nên đến nổi bật</h3><ul><li><strong>Hòn Trống Mái (Hòn Gà Chọi):</strong> Biểu tượng tiêu biểu của Vịnh Hạ Long với hai khối đá đứng đối diện nhau giữa biển, gắn liền với nhiều truyền thuyết dân gian.</li><li><strong>Động Thiên Cung:</strong> Hang động nổi tiếng với không gian rộng lớn, thạch nhũ nhiều màu sắc, được xem là một trong những hang động đẹp nhất vịnh.</li><li><strong>Hang Sửng Sốt:</strong> Hang động có quy mô lớn, cảnh quan tráng lệ, gây ấn tượng mạnh cho du khách ngay từ tên gọi.</li><li><strong>Đảo Titop:</strong> Địa điểm lý tưởng để tắm biển và ngắm toàn cảnh Vịnh Hạ Long từ trên cao.</li><li><strong>Du thuyền tham quan vịnh:</strong> Trải nghiệm không thể thiếu giúp du khách chiêm ngưỡng vẻ đẹp của hàng nghìn đảo đá giữa làn nước xanh biếc.</li></ul><h3>3. Ẩm thực Vịnh Hạ Long</h3><p>Ẩm thực Hạ Long nổi bật với các món hải sản tươi ngon, đặc trưng của vùng biển.</p><ul><li><strong>Chả mực Hạ Long:</strong> Đặc sản nổi tiếng nhất, có vị giòn dai và hương thơm đặc trưng.</li><li><strong>Hải sản tươi sống:</strong> Bề bề, cua, ghẹ, hàu sữa được chế biến đơn giản nhưng đậm vị biển.</li></ul><h3>4. Giá trị văn hóa và ý nghĩa</h3><p>Vịnh Hạ Long không chỉ có giá trị về cảnh quan thiên nhiên mà còn gắn liền với truyền thuyết rồng thiêng trong văn hóa dân gian Việt Nam. Cuộc sống của ngư dân trên vịnh thể hiện sự gắn bó lâu đời giữa con người và biển cả, góp phần làm nên bản sắc văn hóa độc đáo của vùng đất Quảng Ninh.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/halong1.jpg"></div><div class="modal-gallery-item"><img src="img/dongthiencung.jpg"></div><div class="modal-gallery-item"><img src="img/chamuc.jpg"></div><div class="modal-gallery-item"><img src="img/halong5.jpg"></div></div>` },
+            "sapa": { title: "Thị Trấn Sapa", subtitle: "Lào Cai", image: "img/fansipan.jpg", content: `<h3>1. Giới thiệu</h3><p>Sapa – thị trấn vùng cao thuộc tỉnh Lào Cai, được mệnh danh là "nơi gặp gỡ đất trời". Nơi đây mang trong mình vẻ đẹp giao thoa giữa thiên nhiên hoang sơ, kỳ vĩ và sắc màu văn hóa độc đáo của các dân tộc thiểu số. Sapa thu hút du khách bởi khí hậu mát mẻ, những thửa ruộng bậc thang ngút ngàn và đỉnh Fansipan huyền thoại.</p><p>Vẻ đẹp Sapa biến chuyển kỳ diệu qua 4 mùa: Mùa xuân rực rỡ hoa đào hoa mận, mùa hạ mát mẻ với lúa xanh, mùa thu vàng óng ả mùa gặt và mùa đông huyền ảo trong sương mù, tuyết trắng.</p><img src="img/thunglungmuonghoa.jpg" class="highlight-img" alt="Thung lũng Mường Hoa"> <h3>2. Địa điểm tham quan nổi bật</h3><ul><li><strong>Đỉnh Fansipan:</strong> "Nóc nhà Đông Dương" cao 3.143m, nơi chiêm ngưỡng biển mây bồng bềnh và quần thể kiến trúc tâm linh hùng vĩ.</li><li><strong>Nhà thờ Đá Sapa:</strong> Biểu tượng của thị trấn, dấu ấn kiến trúc Pháp cổ toàn vẹn nhất nằm ngay trung tâm quảng trường.</li><li><strong>Bản Cát Cát:</strong> Ngôi làng cổ của người H’mông, nơi lưu giữ nghề thủ công truyền thống và những nếp nhà trình tường.</li><li><strong>Thung lũng Mường Hoa:</strong> Nổi tiếng với bãi đá cổ khắc hình kỳ bí và những thửa ruộng bậc thang đẹp nhất thế giới.</li></ul><h3>3. Ẩm thực Sapa</h3><p>Hương vị núi rừng Tây Bắc đặc trưng với mắc khén, hạt dổi.</p><ul><li><strong>Thắng cố:</strong> Món ăn truyền thống của người H’mông nấu từ thịt ngựa và thảo mộc, hương vị nồng nàn khó quên.</li><li><strong>Lẩu cá tầm, cá hồi:</strong> Nhờ khí hậu ôn đới, cá ở đây thịt chắc, tươi ngon, thường nấu lẩu chua cay ăn kèm rau rừng.</li><li><strong>Đồ nướng Sapa:</strong> Trải nghiệm ẩm thực đường phố hấp dẫn với xiên thịt lợn bản, rau củ nướng trên than hồng trong tiết trời se lạnh.</li></ul><h3>4. Văn hóa đặc sắc</h3><p>Văn hóa Sapa là bức tranh đa sắc được dệt nên bởi cộng đồng H’mông, Dao Đỏ, Tày, Giáy... Người dân chân chất trong trang phục thổ cẩm rực rỡ. Các phiên chợ vùng cao và lễ hội như Gầu Tào, Roong Pooc phản ánh đời sống tinh thần phong phú nơi rẻo cao.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/sapa1.jpg"></div><div class="modal-gallery-item"><img src="img/nhathoda.jpg"></div><div class="modal-gallery-item"><img src="img/thangco.jpg"></div><div class="modal-gallery-item"><img src="img/bancatcat.jpg"></div></div>` },
+            "ninhbinh": { title: "Tràng An - Bái Đính", subtitle: "Ninh Bình", image: "img/trangan.jpg", content: `<h3>1. Giới thiệu</h3><p>Ninh Bình – vùng đất cố đô ngàn năm văn hiến, được ví như một "Việt Nam thu nhỏ". Nơi đây nổi tiếng với quần thể danh thắng Tràng An (Di sản kép UNESCO), vẻ đẹp "sơn thủy hữu tình" của dòng sông Ngô Đồng uốn lượn và những dãy núi đá vôi hùng vĩ.</p><p>Ninh Bình đẹp quanh năm: Mùa xuân tưng bừng lễ hội, mùa hè rực rỡ lúa chín vàng Tam Cốc, mùa thu nước trong vắt và mùa đông trầm mặc huyền bí.</p><img src="img/tamcocbichdong.jpg" class="highlight-img" alt="Tam Cốc Bích Động" height=200px> <h3>2. Địa điểm tham quan nổi bật</h3><ul><li><strong>Quần thể danh thắng Tràng An:</strong> Được ví như "Hạ Long trên cạn" với hệ thống hang động xuyên thủy độc đáo và thảm thực vật phong phú.</li><li><strong>Tam Cốc – Bích Động:</strong> Nổi tiếng với ba hang động tuyệt đẹp và ngôi chùa cổ kính nằm tựa vào vách núi, đẹp như tranh thủy mặc.</li><li><strong>Cố đô Hoa Lư:</strong> Kinh đô đầu tiên của nhà nước phong kiến tập quyền, lưu giữ dấu ấn lịch sử hào hùng của triều đại Đinh - Lê.</li><li><strong>Chùa Bái Đính:</strong> Quần thể chùa lớn nhất Đông Nam Á, nắm giữ nhiều kỷ lục và là điểm đến tâm linh linh thiêng.</li></ul><h3>3. Ẩm thực Ninh Bình</h3><p>Ẩm thực nơi đây mang đậm hương vị núi đá vôi với các món ăn dân dã nhưng đậm đà:</p><ul><li><strong>Thịt dê núi:</strong> Đặc sản trứ danh, thịt săn chắc, ít mỡ, chế biến thành dê tái chanh, xào lăn... ăn kèm rau rừng.</li><li><strong>Cơm cháy:</strong> Giòn rụm, vàng ươm, chấm với nước sốt tim cật hoặc thịt dê tạo nên hương vị khó quên.</li><li><strong>Ốc núi:</strong> Ốc sống trong hang đá, thịt dai giòn, có vị thuốc bắc do ăn lá rừng.</li></ul><h3>4. Văn hóa đặc sắc</h3><p>Văn hóa Ninh Bình là sự kết tinh của lịch sử hào hùng và đời sống lao động vùng chiêm trũng. Người dân hiền hòa, mến khách. Các lễ hội lớn như Lễ hội Hoa Lư, Lễ hội chùa Bái Đính cùng các làng nghề truyền thống như thêu ren Văn Lâm, đá mỹ nghệ Ninh Vân đã tạo nên bản sắc văn hóa độc đáo.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/ninhbinh1.jpg"></div><div class="modal-gallery-item"><img src="img/chuabaidinh.jpg"></div><div class="modal-gallery-item"><img src="img/comchay.jpg"></div><div class="modal-gallery-item"><img src="img/thitdenui.jpg"></div></div>` },
+            "mocchau": { title: "Cao Nguyên Mộc Châu", subtitle: "Sơn La", image: "img/mocchau1.jpg", content: `<h3>1. Giới thiệu</h3><p>Nằm cách Hà Nội gần 200 km, Mộc Châu là điểm đến hấp dẫn với khí hậu ôn hòa bốn mùa. Tháng 1 là mùa của hoa đào, hoa mận; tháng 5 rộn ràng mùa hái mận; tháng 8-12 là mùa hồng chín, hoa cải trắng và dã quỳ vàng rực rỡ.</p><img src="img/lehoihoaban.jpg" class="highlight-img" alt="Lễ hội Hoa Ban" height=200px> <h3>2. Ẩm thực đặc sắc</h3><p>Ẩm thực Mộc Châu mang đậm hương vị núi rừng Tây Bắc:</p><ul><li><strong>Bê chao:</strong> Thịt bê non mềm ngọt, chao qua dầu nóng vàng ruộm, chấm tương gừng ngon khó cưỡng.</li><li><strong>Cá suối nướng:</strong> Cá suối nhỏ thịt chắc, ướp mắc khén nướng than hoa thơm lừng, ăn kèm xôi nếp.</li><li><strong>Thịt trâu gác bếp:</strong> Đặc sản người Thái đen, thịt hun khói đậm đà gia vị, thường dùng làm mồi nhắm.</li><li><strong>Nậm Pịa:</strong> Món ăn độc đáo từ lục phủ ngũ tạng, vị đắng nhẹ nơi cuống họng, hậu ngọt, là tinh hoa ẩm thực bản địa.</li></ul><h3>3. Văn hóa & Lễ hội</h3><ul><li><strong>Lễ hội Hoa Ban:</strong> Cầu mưa thuận gió hòa, mùa màng bội thu, tôn vinh vẻ đẹp hoa ban trắng tinh khôi.</li><li><strong>Lễ hội Cầu Mưa:</strong> Nét văn hóa độc đáo của người Thái với biểu tượng cây vạn vật, thể hiện sự hòa quyện giữa con người và thiên nhiên.</li><li><strong>Lễ hội Hết Chá:</strong> Dịp để người dân tạ ơn thầy mo và thần linh, gìn giữ bản sắc văn hóa tâm linh lâu đời.</li></ul><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/mocchau2.jpg"></div><div class="modal-gallery-item"><img src="img/bechao.jpg"></div><div class="modal-gallery-item"><img src="img/casuoinuong.jpg"></div><div class="modal-gallery-item"><img src="img/mocchau5.jpg"></div></div>` },
+            "bangioc": { title: "Thác Bản Giốc", subtitle: "Cao Bằng", image: "img/thacbangioc5.jpg", content: `<h3>1. Giới thiệu</h3><p>Nằm trên biên giới Việt - Trung, Thác Bản Giốc là thác nước tự nhiên lớn nhất Đông Nam Á và đẹp nhất Việt Nam. Thác cao hơn 60m với nhiều tầng đá vôi nối tiếp nhau, trải rộng cả trăm mét. Dòng sông Quây Sơn nước màu ngọc bích chảy qua, tạo nên khung cảnh huyền ảo như tiên cảnh, gắn liền với câu chuyện tình yêu huyền thoại của đôi trai gái miền sơn cước.</p><img src="img/chuaphattichtruclambangioc.jpg" class="highlight-img" alt="Chùa Phật Tích Trúc Lâm Bản Giốc" height=200px> <h3>2. Ẩm thực Trùng Khánh</h3><p>Đến Bản Giốc không thể bỏ qua 4 món đặc sản "siêu đỉnh":</p><ul><li><strong>Cá Trầm Hương nướng:</strong> Loài cá quý dưới chân thác, thịt chắc, khi nướng cảm nhận được mùi trầm phảng phất, thường được bọc lá chuối nướng than.</li><li><strong>Lạp xưởng hun khói:</strong> Vị chua nhẹ của thịt hun khói, hương thơm lá mắc mật và độ dai của lòng non, hoàn toàn không chất bảo quản.</li><li><strong>Hạt dẻ Trùng Khánh:</strong> Hạt to, vỏ mỏng, nướng lên vàng ươm, ăn bùi béo, là thức quà vặt ấm áp trong những ngày se lạnh.</li><li><strong>Chè lam:</strong> Bánh làm từ bột nếp, lạc, mạch nha và gừng. Vị ngọt thanh, cay ấm, rất hợp để thưởng thức cùng trà nóng.</li></ul><h3>3. Văn hóa & Trải nghiệm</h3><p>Văn hóa nơi đây là sự hòa quyện giữa thiên nhiên hùng vĩ và bản sắc dân tộc Tày, Nùng. Du khách có thể trải nghiệm đi bè tre trên sông Quây Sơn để ngắm thác ở cự ly gần.</p><ul><li><strong>Văn hóa tâm linh:</strong> Chùa Phật Tích Trúc Lâm Bản Giốc uy nghiêm trên ngọn đồi Phia Nhằm, nơi bao quát toàn cảnh thác.</li><li><strong>Làng đá Khuổi Ky:</strong> Ngôi làng cổ của người Tày với những ngôi nhà sàn làm hoàn toàn bằng đá độc đáo.</li><li><strong>Chợ phiên:</strong> Nơi khám phá sắc màu bản địa và mua sắm các sản vật vùng cao.</li></ul><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/thacbangioc1.jpg"></div><div class="modal-gallery-item"><img src="img/hatdetrungkhanh.jpg"></div><div class="modal-gallery-item"><img src="img/lapxuong.jpg"></div><div class="modal-gallery-item"><img src="img/thacbangioc2.jpg"></div></div>` },
+            "chuahuong": { title: "Lễ Hội Chùa Hương", subtitle: "Mỹ Đức - Hà Nội", image: "img/lehoichuahuong.jpg", content: `<h3>1. Giới thiệu</h3><p>Diễn ra từ tháng 1 đến tháng 3 âm lịch hàng năm, đây là lễ hội kéo dài nhất Việt Nam. Không chỉ là hành trình về cõi Phật, du khách còn được hòa mình vào non nước hữu tình khi ngồi thuyền trên dòng Suối Yến thơ mộng, ngắm nhìn núi non trùng điệp.</p><img src="img/suoiyen.webp" height=200px class="highlight-img" alt="Suối Yến mùa lễ hội"><h3>2. Hoạt động chính</h3><ul><li><strong>Phần Lễ:</strong> Dâng hương tại Đền Trình, chùa Thiên Trù và động Hương Tích - nơi được mệnh danh là "Nam thiên đệ nhất động".</li><li><strong>Phần Hội:</strong> Chèo thuyền, leo núi và thưởng thức các đặc sản vùng núi đá vôi như rau sắng, mơ Hương Tích.</li></ul>` },
+            "denhung": { title: "Giỗ Tổ Hùng Vương", subtitle: "Phú Thọ", image: "img/denhung.jpg", content: `<h3>1. Ý nghĩa thiêng liêng</h3><p>"Dù ai đi ngược về xuôi / Nhớ ngày Giỗ Tổ mùng mười tháng ba". Đây là lễ hội cấp quốc gia, biểu tượng của tinh thần đại đoàn kết và đạo lý "uống nước nhớ nguồn" của dân tộc Việt Nam.</p><img src="img/leruockieu.webp" height=200px class="highlight-img" alt="Lễ rước kiệu Đền Hùng"><h3>2. Nghi thức đặc sắc</h3><ul><li><strong>Lễ rước kiệu:</strong> Đám rước trang trọng với cờ lọng, chiêng trống từ chân núi lên đền Thượng.</li><li><strong>Dâng lễ vật:</strong> Bánh chưng (tượng trưng cho đất) và bánh dày (tượng trưng cho trời) để tạ ơn công đức các Vua Hùng.</li></ul>` },
+            "hoilim": { title: "Hội Lim", subtitle: "Bắc Ninh", image: "img/hoilim.jpg", content: `<h3>1. Không gian văn hóa Kinh Bắc</h3><p>Hội Lim là lễ hội lớn nhất vùng Kinh Bắc, diễn ra vào đầu xuân (13 tháng Giêng). Đây là nơi tôn vinh Dân ca Quan họ Bắc Ninh - Di sản văn hóa phi vật thể đại diện của nhân loại.</p><h3>2. Hoạt động đặc trưng</h3><p>Điểm nhấn là các màn hát giao duyên đối đáp giữa các liền anh, liền chị trên bến nước, dưới thuyền rồng hoặc trên đồi Lim. Ngoài ra còn có các trò chơi dân gian như đấu vật, đập niêu, dệt cửi...</p>` },
+            "khauvai": { title: "Chợ Tình Khau Vai", subtitle: "Hà Giang", image: "img/chotinh.webp", content: `<h3>1. Huyền thoại tình yêu</h3><p>Phiên chợ "phong lưu" độc nhất vô nhị chỉ họp mỗi năm một lần vào ngày 27/3 âm lịch. Đây không phải nơi buôn bán hàng hóa thông thường, mà là nơi hò hẹn của những đôi trai gái yêu nhau nhưng lỡ duyên không đến được với nhau.</p><h3>2. Ý nghĩa nhân văn</h3><p>Tại đây, người ta không ghen tuông, không trách móc. Vợ chồng có thể tạm tách nhau ra để tìm gặp người xưa, cùng uống bát rượu ngô, tâm sự chuyện đời rồi hôm sau lại quay về cuộc sống thường nhật.</p>` },
+            "chophien": { title: "Chợ Phiên Vùng Cao", subtitle: "Tây Bắc", image: "img/khauvai.jpg", content: `<h3>1. Nét đẹp sinh hoạt cộng đồng</h3><p>Chợ phiên (như chợ Bắc Hà, Đồng Văn) không chỉ là nơi giao thương mà còn là ngày hội văn hóa. Đồng bào các dân tộc H'Mông, Dao, Tày... xúng xính trong những bộ trang phục thổ cẩm rực rỡ nhất xuống chợ.</p><h3>2. Trải nghiệm không thể bỏ qua</h3><ul><li><strong>Ẩm thực:</strong> Thưởng thức thắng cố nóng hổi, uống rượu ngô men lá.</li><li><strong>Mua sắm:</strong> Các sản vật địa phương như mật ong bạc hà, vải lanh, đồ trang sức bạc thủ công.</li></ul>` },
+            "caumua": { title: "Lễ Hội Cầu Mưa", subtitle: "Mộc Châu - Sơn La", image: "img/lehoicaumua.jpg", content: `<h3>1. Tín ngưỡng nông nghiệp</h3><p>Đối với người Thái ở Mộc Châu, đây là nghi lễ quan trọng bậc nhất để cầu mong mưa thuận gió hòa, mùa màng tươi tốt, bản làng yên vui.</p><h3>2. Biểu tượng độc đáo</h3><p>Điểm nhấn là "Cây vạn vật" được trang trí công phu bằng nan tre hình chim muông, ve sầu, lồng trứng gà... tượng trưng cho sự sinh sôi nảy nở và sự giao hòa giữa con người với thiên nhiên.</p>` },
+            "mucangchai_fest": { title: "Lễ Hội Mùa Vàng", subtitle: "Mù Cang Chải - Yên Bái", image: "img/lehoimucangchai1.jpg", content: `<h3>1. Sắc vàng rẻo cao</h3><p>Diễn ra vào tháng 9-10 hàng năm khi những thửa ruộng bậc thang chín vàng óng ả. Đây là thời điểm Mù Cang Chải đẹp quyến rũ nhất, thu hút nhiếp ảnh gia và du khách khắp nơi.</p><h3>2. Bay trên mùa vàng</h3><p>Hoạt động nổi bật nhất là <strong>Festival Dù lượn "Bay trên mùa vàng"</strong>. Du khách được trải nghiệm cảm giác bay lượn trên bầu trời, ngắm nhìn thung lũng lúa chín vàng rực rỡ từ trên cao vô cùng ngoạn mục.</p>` },
+            "hoaban": { title: "Lễ Hội Hoa Ban", subtitle: "Điện Biên - Sơn La", image: "img/lehoihoaban.jpg", content: `<h3>1. Biểu tượng Tây Bắc</h3><p>Hoa Ban là loài hoa biểu tượng cho vẻ đẹp tinh khôi của núi rừng và tình yêu đôi lứa thủy chung (gắn liền với truyền thuyết nàng Ban và chàng Khum).</p><h3>2. Thời gian tổ chức</h3><p>Lễ hội thường diễn ra vào tháng 3 dương lịch khi hoa ban nở trắng rừng. Du khách sẽ được hòa mình vào tiếng khèn, điệu múa xòe và các trò chơi dân gian ném còn, tó má lẹ...</p>` },
+            "hetcha": { title: "Lễ Hội Hết Chá", subtitle: "Mộc Châu", image: "img/lehoihetcha.jpg", content: `<h3>1. Nét đẹp tâm linh người Thái</h3><p>Lễ hội Hết Chá (lễ tạ ơn đất trời, tạ ơn thầy mo) thường được tổ chức vào mùa xuân khi hoa mận, hoa ban nở rộ. Đây là dịp để người dân tạ ơn những người thầy thuốc đã cứu chữa cho dân bản.</p><h3>2. Kết nối cộng đồng</h3><p>Lễ hội kết hợp giữa phần lễ trang nghiêm và phần hội vui tươi với những điệu xòe, kịch thơ mô phỏng cuộc sống sinh hoạt đời thường, giáo dục con cháu lối sống tốt đẹp.</p>` }
+        };
+
+        const banners = document.querySelectorAll('.banner-background img');
+        let bIndex = 0;
+        setInterval(() => { banners[bIndex].classList.remove('active'); bIndex = (bIndex + 1) % banners.length; banners[bIndex].classList.add('active'); }, 5000);
+
+        const track = document.getElementById('foodTrack');
+        const itemWidth = 300; 
+        let isAnimating = false;
+        let autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+        let restartTimer;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) nextSlide(true);
+            if (touchEndX - touchStartX > 50) prevSlide(true);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            clearTimeout(restartTimer);
+            restartTimer = setTimeout(() => {
+                autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+            }, 3000);
+        }
+
+        function nextSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            setTimeout(() => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                isAnimating = false;
+            }, 500);
+        }
+
+        function prevSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'none';
+            track.prepend(track.lastElementChild);
+            track.style.transform = `translateX(-${itemWidth}px)`;
+            
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+                track.style.transform = 'translateX(0)';
+                setTimeout(() => { isAnimating = false; }, 500);
+            }, 20);
+        }
+
+        const menuIcon = document.querySelector('.mobile-menu-icon');
+        const navMenu = document.querySelector('.header-menu');
+        if(menuIcon) {
+            menuIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if(navMenu.classList.contains('active')){
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        function showModal(id) {
+            const data = locationData[id];
+            if(!data) return;
+            document.getElementById('modalBody').innerHTML = `<h2>${data.title}</h2>` + data.content;
+            document.getElementById('modalImg').src = data.image;
+            document.getElementById('modalCaption').innerText = data.subtitle;
+            const modal = document.getElementById('infoModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
+            document.querySelectorAll('#modalBody img').forEach(img => { img.onclick = () => openZoomModal(img.src); });
+            
+            history.pushState({modalOpen: true}, null, "");
+        }
+
+        window.addEventListener('popstate', function(event) {
+            const modal = document.getElementById('infoModal');
+            if (modal.style.display === 'flex') {
+                const modalOverlay = document.getElementById('infoModal');
+                modalOverlay.style.opacity = '0';
+                setTimeout(() => { modalOverlay.style.display = 'none'; }, 300);
+            }
+        });
+
+        function handleOverlayClick(e) { 
+            if(e.target.id === 'infoModal') {
+                goBackHistory();
+            } 
+        }
+
+        function goBackHistory() {
+            history.back();
+        }
+
+        function closeModalDirect() {
+            const modal = document.getElementById('infoModal');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function openZoomModal(src) { document.getElementById('zoomedImg').src = src; document.getElementById('zoomModal').style.display = 'flex'; }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) || (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83))) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

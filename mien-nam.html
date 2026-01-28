@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khám Phá Miền Nam - Vùng Đất Chín Rồng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Travel VietNam</div>
+        <div class="header-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="mien-bac.html">Miền Bắc</a>
+            <a href="mien-trung.html">Miền Trung</a>
+            <a href="mien-nam.html" class="active">Miền Nam</a>
+            <a href="bien-dao.html">Biển Đảo</a>
+        </div>
+        <i class="fas fa-bars mobile-menu-icon"></i>
+    </header>
+    <div class="region-banner">
+        <div class="banner-background" id="bannerImages">
+            <img src="img/chobenthanhtphcm.jpg" class="active" alt="Sài Gòn">
+            <img src="img/benninhkieutpcantho.jpg" alt="Cần Thơ">
+            <img src="img/dongsenthapmuoidongthap.jpg" alt="Đồng Tháp">
+            <img src="img/nuibadentayninh.jpg" alt="Tây Ninh">
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Hành Trình Phương Nam</h1>
+            <p>Sôi Động Phồn Hoa & Sông Nước Hữu Tình</p>
+        </div>
+    </div>
+    <div class="regions-nav-container">
+        <div class="regions-nav">
+            <a href="mien-bac.html" class="region-btn">Miền Bắc</a>
+            <a href="mien-trung.html" class="region-btn">Miền Trung</a>
+            <a href="mien-nam.html" class="region-btn active-region">Miền Nam</a>
+            <a href="bien-dao.html" class="region-btn">Biển Đảo</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Đông Nam Bộ & Miền Tây</div>
+            <div class="section-subtitle">Vùng đất phương Nam</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="card-grid">
+            <div class="card" onclick="showModal('tphcm')">
+                <img src="img/dinhdoclaptphcm.jpg" alt="HCM">
+                <div class="card-info">
+                    <h3>TP. Hồ Chí Minh</h3>
+                    <p><i class="fas fa-city"></i> Hòn ngọc Viễn Đông sôi động.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('tayninh')">
+                <img src="img/nuibadentayninh.jpg" alt="Tây Ninh">
+                <div class="card-info">
+                    <h3>Núi Bà Đen - Tây Ninh</h3>
+                    <p><i class="fas fa-mountain"></i> Nóc nhà Đông Nam Bộ.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('cantho')">
+                <img src="img/chonoicairangtpcantho.jpg" alt="Cần Thơ">
+                <div class="card-info">
+                    <h3>Chợ Nổi Cái Răng</h3>
+                    <p><i class="fas fa-ship"></i> Văn hóa sông nước độc đáo.</p>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('angiang')">
+                <img src="img/thatsonangiang.jpg" alt="An Giang">
+                <div class="card-info">
+                    <h3>Thất Sơn - An Giang</h3>
+                    <p><i class="fas fa-cloud"></i> Vùng Bảy Núi linh thiêng.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('dongthap')">
+                <img src="img/dongsenthapmuoidongthap.jpg" alt="Đồng Tháp">
+                <div class="card-info">
+                    <h3>Đồng Sen Tháp Mười</h3>
+                    <p><i class="fas fa-spa"></i> Thủ phủ hoa sen thuần khiết.</p>
+                </div>
+            </div>
+             <div class="card" onclick="showModal('camau')">
+                <img src="img/uminhhacamau.jpg" alt="Cà Mau">
+                <div class="card-info">
+                    <h3>Đất Mũi Cà Mau</h3>
+                    <p><i class="fas fa-map-pin"></i> Cực Nam thiêng liêng của Tổ quốc.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="section-header">
+            <div class="section-title">Thiên Đường Ẩm Thực</div>
+            <div class="section-subtitle">Đậm đà hương vị miền Nam</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="food-slider-viewport">
+            <button class="slider-btn prev-btn" onclick="prevSlide(true)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="nextSlide(true)"><i class="fas fa-chevron-right"></i></button>
+            <div class="food-track" id="foodTrack">
+                <div class="food-item"><img src="img/comtamtphcm.jpg"><h4>Cơm Tấm</h4><span>Sài Gòn</span></div>
+                <div class="food-item"><img src="img/hutieunamvangtphcm.jpg"><h4>Hủ Tiếu</h4><span>Nam Vang</span></div>
+                <div class="food-item"><img src="img/banhxeotpcantho.jpg"><h4>Bánh Xèo</h4><span>Miền Tây</span></div>
+                <div class="food-item"><img src="img/laumamchaudocangiang.jpeg"><h4>Lẩu Mắm</h4><span>Châu Đốc</span></div>
+                <div class="food-item"><img src="img/bototayninh.jpg"><h4>Bò Tơ</h4><span>Tây Ninh</span></div>
+                <div class="food-item"><img src="img/cuacamau.jpg"><h4>Cua Cà Mau</h4><span>Cực Nam</span></div>
+                <div class="food-item"><img src="img/hutieusadecdongthap.jpg"><h4>Hủ Tiếu</h4><span>Sa Đéc</span></div>
+                <div class="food-item"><img src="img/calocnuongtruicamau.jpg"><h4>Cá Lóc Nướng</h4><span>Dân dã</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="section-header">
+            <div class="section-title">Lễ Hội Văn Hóa</div>
+            <div class="section-subtitle">Tín ngưỡng phương Nam</div>
+            <div class="section-divider"></div>
+        </div>
+        <div class="festival-grid">
+            <div class="festival-card" onclick="showModal('bachuaxu')">
+                <img src="img/lehoimieubachuaxunuisamangiang.jpg" alt="Bà Chúa Xứ">
+                <div class="festival-info">
+                    <h3>Lễ Vía Bà Chúa Xứ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> An Giang</p>
+                    <p>Lễ hội tâm linh lớn nhất miền Tây Nam Bộ.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('banhdangian')">
+                <img src="img/lehoibanhdangiannambotpcantho.jpg" alt="Bánh dân gian">
+                <div class="festival-info">
+                    <h3>Lễ Hội Bánh Dân Gian</h3>
+                    <p><i class="fas fa-cookie"></i> Cần Thơ</p>
+                    <p>Quy tụ hàng trăm loại bánh ngon Nam Bộ.</p>
+                </div>
+            </div>
+            <div class="festival-card" onclick="showModal('nghinhong')">
+                <img src="img/lehoinghinhongtphcm.jpg" alt="Nghinh Ông">
+                <div class="festival-info">
+                    <h3>Lễ Hội Nghinh Ông</h3>
+                    <p><i class="fas fa-water"></i> Cần Giờ, TP.HCM</p>
+                    <p>Tục thờ cúng cá Voi của ngư dân ven biển.</p>
+                </div>
+            </div>
+             <div class="festival-card" onclick="showModal('okombok')">
+                <img src="img/omboo.jpg" alt="Ok Om Bok">
+                <div class="festival-info">
+                    <h3>Lễ Hội Ok Om Bok</h3>
+                    <p><i class="fas fa-moon"></i> Sóc Trăng</p>
+                    <p>Lễ cúng trăng và đua ghe Ngo của người Khmer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content" style="justify-content: center; border: none; text-align: center;">
+            <div class="footer-col">
+                <h3>Về chúng tôi</h3>
+                <p>Website du lịch lớp 12T1 - Tổ 4</p>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Trang Chủ</span></a>
+        <a href="mien-bac.html" class="nav-item"><i class="fas fa-mountain"></i><span>Miền Bắc</span></a>
+        <a href="mien-trung.html" class="nav-item"><i class="fas fa-gopuram"></i><span>Miền Trung</span></a>
+        <a href="mien-nam.html" class="nav-item active"><i class="fas fa-water"></i><span>Miền Nam</span></a>
+        <a href="bien-dao.html" class="nav-item"><i class="fas fa-anchor"></i><span>Biển Đảo</span></a>
+    </div>
+    <div id="infoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <div class="close-zoom-btn" onclick="goBackHistory()">&times;</div>
+            <div class="modal-scroll-container">
+                <div class="modal-left">
+                    <img id="modalImg" class="modal-circle-img" src="">
+                    <h3 id="modalCaption" style="margin-top:10px; color:var(--primary-color); font-weight:bold; text-transform:uppercase;"></h3>
+                </div>
+                <div class="modal-right">
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="zoomModal" class="zoom-modal" onclick="this.style.display='none'">
+        <span class="close-zoom">&times;</span>
+        <img class="zoom-modal-content" id="zoomedImg">
+    </div>
+    <script>
+        const locationData = {
+            "tphcm": { title: "TP. Hồ Chí Minh (Sài Gòn)", subtitle: "Hòn Ngọc Viễn Đông", image: "img/landmark81tphcm.jpg", content: `<h3>1. Giới thiệu</h3><p>Thành phố Hồ Chí Minh là trung tâm kinh tế, văn hóa lớn nhất Việt Nam. Nơi đây mang vẻ đẹp giao thoa độc đáo giữa kiến trúc Pháp cổ kính và những tòa nhà chọc trời hiện đại. Sài Gòn là thành phố không ngủ, luôn sôi động, trẻ trung và phóng khoáng.</p><img src="img/chobenthanhtphcm.jpg" height=200px class="highlight-img" alt="Chợ Bến Thành"><h3>2. Điểm đến biểu tượng</h3><ul><li><strong>Dinh Độc Lập:</strong> Chứng nhân lịch sử hào hùng của dân tộc.</li><li><strong>Nhà thờ Đức Bà & Bưu điện Thành phố:</strong> Tuyệt tác kiến trúc Pháp cổ ngay trung tâm Quận 1.</li><li><strong>Phố đi bộ Nguyễn Huệ & Bùi Viện:</strong> Nơi tập trung vui chơi giải trí sầm uất nhất về đêm.</li><li><strong>Landmark 81:</strong> Tòa nhà cao nhất Việt Nam, biểu tượng cho sự vươn lên mạnh mẽ.</li></ul><h3>3. Ẩm thực đường phố</h3><p>Sài Gòn là thiên đường ẩm thực đường phố. Không thể bỏ qua Cơm tấm sườn bì chả, Hủ tiếu Nam Vang, Bánh mì Sài Gòn và văn hóa cà phê bệt độc đáo.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/dinhdoclaptphcm.jpg"></div><div class="modal-gallery-item"><img src="img/nhathoducbatphcm.jpg"></div><div class="modal-gallery-item"><img src="img/comtamtphcm.jpg"></div><div class="modal-gallery-item"><img src="img/botchientphcm.jpg"></div></div>` },
+            "tayninh": { title: "Tây Ninh", subtitle: "Vùng Đất Thánh", image: "img/nuibadentayninh.jpg", content: `<h3>1. Giới thiệu</h3><p>Tây Ninh là cửa ngõ giao thương quan trọng với Campuchia, nổi tiếng với Núi Bà Đen – "Nóc nhà Đông Nam Bộ" (cao 986m) và là thánh địa của đạo Cao Đài.</p><img src="img/nuibadentayninh.webp" class="highlight-img" alt="Tòa Thánh Tây Ninh" height=200px><h3>2. Trải nghiệm tâm linh & Khám phá</h3><ul><li><strong>Khu du lịch Núi Bà Đen:</strong> Chinh phục đỉnh núi bằng hệ thống cáp treo hiện đại, săn mây và chiêm ngưỡng tượng Phật Bà Tây Bổ Đà Sơn bằng đồng cao nhất Châu Á.</li><li><strong>Tòa Thánh Tây Ninh:</strong> Công trình kiến trúc tôn giáo vĩ đại, độc đáo với sự kết hợp triết lý Đông - Tây.</li></ul><h3>3. Đặc sản trứ danh</h3><p>Đến Tây Ninh phải thử <strong>Bánh canh Tràng Bàng</strong>, <strong>Bò tơ Tây Ninh</strong> nướng thơm lừng và đặc biệt là <strong>Muối tôm Tây Ninh</strong> - thức chấm nổi tiếng dù vùng đất này không có biển.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/tayninh-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/tayninh-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/tayninh-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/tayninh-gallery-4.webp"></div></div>` },
+            "cantho": { title: "Cần Thơ", subtitle: "Tây Đô Sông Nước", image: "img/benninhkieutpcantho.jpg", content: `<h3>1. Giới thiệu</h3><p>"Cần Thơ gạo trắng nước trong - Ai đi đến đó lòng không muốn về". Là thành phố thủ phủ của miền Tây Nam Bộ, Cần Thơ mang đậm bản sắc văn hóa sông nước miệt vườn.</p><img src="img/chonoicairangtpcantho.jpg"height=200px class="highlight-img" alt="Chợ nổi Cái Răng"><h3>2. Điểm đến nổi bật</h3><ul><li><strong>Chợ nổi Cái Răng:</strong> Di sản văn hóa phi vật thể, nơi du khách trải nghiệm ăn sáng, uống cà phê ngay trên thuyền bồng bềnh.</li><li><strong>Bến Ninh Kiều:</strong> Biểu tượng của Cần Thơ, lung linh về đêm với Cầu đi bộ và du thuyền trên sông Hậu.</li><li><strong>Nhà cổ Bình Thủy:</strong> Ngôi nhà cổ đẹp nhất miền Tây với kiến trúc Pháp - Việt - Hoa, phim trường của nhiều bộ phim nổi tiếng.</li></ul><h3>3. Ẩm thực Miền Tây</h3><p>Thưởng thức Lẩu mắm đậm đà, Bánh xèo củ hủ dừa giòn rụm và các loại trái cây tươi ngon ngay tại vườn.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/cantho-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/cantho-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/cantho-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/cantho-gallery-4.webp"></div></div>` },
+            "angiang": { title: "An Giang", subtitle: "Vùng Thất Sơn Huyền Bí", image: "img/thatsonangiang.jpg", content: `<h3>1. Giới thiệu</h3><p>An Giang là vùng đất đa dạng văn hóa với sự cộng cư của 4 dân tộc: Kinh, Chăm, Hoa, Khmer. Nơi đây nổi tiếng với vùng Bảy Núi (Thất Sơn) linh thiêng và mùa nước nổi đẹp như tranh.</p><img src="img/congtroitritonangiang.webp" height=200px class="highlight-img" alt="Cổng trời Tri Tôn"><h3>2. Điểm đến tâm linh & Sinh thái</h3><ul><li><strong>Miếu Bà Chúa Xứ (Châu Đốc):</strong> Điểm du lịch tâm linh nổi tiếng nhất miền Nam, thu hút hàng triệu lượt khách hành hương.</li><li><strong>Rừng tràm Trà Sư:</strong> Thiên đường xanh ngập nước, nơi du khách đi xuồng ba lá len lỏi giữa rừng tràm bèo tấm phủ kín.</li><li><strong>Làng Chăm:</strong> Khám phá văn hóa dệt thổ cẩm và thánh đường Hồi giáo độc đáo.</li></ul><h3>3. Đặc sản Châu Đốc</h3><p>An Giang được mệnh danh là "Vương quốc mắm" với hàng trăm loại mắm cá ngon. Ngoài ra còn có Bún cá Châu Đốc, Gà đốt Ô Thum, Bánh bò thốt nốt.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/angiang-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/angiang-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/angiang-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/angiang-gallery-4.jfif"></div></div>` },
+            "dongthap": { title: "Đồng Tháp", subtitle: "Thủ Phủ Sen Hồng", image: "img/dongsenthapmuoidongthap.jpg", content: `<h3>1. Giới thiệu</h3><p>"Tháp Mười đẹp nhất bông sen - Việt Nam đẹp nhất có tên Bác Hồ". Đồng Tháp Mười là vùng đất trũng ngập nước, nổi tiếng với những cánh đồng sen bạt ngàn và thiên nhiên hoang sơ.</p><img src="img/hoasen.webp" height=200px class="highlight-img"><h3>2. Trải nghiệm thiên nhiên</h3><ul><li><strong>Vườn quốc gia Tràm Chim:</strong> Nơi bảo tồn loài Sếu đầu đỏ quý hiếm và hệ sinh thái đất ngập nước.</li><li><strong>Làng hoa Sa Đéc:</strong> Làng hoa lớn nhất miền Tây, rực rỡ sắc màu quanh năm, đặc biệt vào dịp Tết.</li><li><strong>Khu di tích Xẻo Quýt:</strong> Căn cứ cách mạng nằm sâu trong rừng tràm nguyên sinh.</li></ul><h3>3. Ẩm thực đồng quê</h3><p>Đặc sản Đồng Tháp dân dã nhưng cực ngon: Nem Lai Vung, Hủ tiếu Sa Đéc, Lẩu cá linh bông điên điển, Chuột đồng nướng lu.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/dongthap-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/dongthap-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/dongthap-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/dongthap-gallery-4.webp"></div></div>` },
+            "camau": { title: "Cà Mau", subtitle: "Cực Nam Tổ Quốc", image: "img/bienkhailongcamau.jpg", content: `<h3>1. Giới thiệu</h3><p>Cà Mau là vùng đất tận cùng phía Nam của Việt Nam, nơi "đất biết nở, rừng biết đi và biển sinh sôi". Nơi đây có hệ sinh thái rừng ngập mặn lớn thứ 2 thế giới.</p><img src="img/datmui.webp" height=200px class="highlight-img"><h3>2. Khám phá Đất Mũi</h3><ul><li><strong>Mũi Cà Mau:</strong> Nơi duy nhất trên đất liền có thể ngắm mặt trời mọc ở biển Đông và lặn ở biển Tây. Check-in tại cột mốc tọa độ quốc gia GPS 0001.</li><li><strong>Rừng U Minh Hạ:</strong> Khu rừng tràm ngập nước nổi tiếng với nghề gác kèo ong lấy mật.</li></ul><h3>3. Đặc sản trứ danh</h3><p><strong>Cua Cà Mau</strong> được đánh giá là loại cua ngon nhất Việt Nam với thịt chắc, ngọt và gạch béo. Ngoài ra còn có Cá thòi lòi nướng muối ớt, Vọp nướng mỡ hành.</p><h3>Thư viện ảnh</h3><div class="modal-gallery-grid"><div class="modal-gallery-item"><img src="img/camau-gallery-1.webp"></div><div class="modal-gallery-item"><img src="img/camau-gallery-2.webp"></div><div class="modal-gallery-item"><img src="img/camau-gallery-3.webp"></div><div class="modal-gallery-item"><img src="img/camau-gallery-4.webp"></div></div>` },
+            "bachuaxu": { title: "Lễ Vía Bà Chúa Xứ", subtitle: "Núi Sam - An Giang", image: "img/lehoimieubachuaxunuisamangiang.jpg", content: `<h3>1. Giới thiệu</h3><p>Diễn ra từ ngày 23 đến 27 tháng 4 âm lịch hàng năm tại Miếu Bà Chúa Xứ Núi Sam. Đây là lễ hội cấp quốc gia, mang đậm bản sắc văn hóa tâm linh vùng Nam Bộ.</p><h3>2. Hoạt động chính</h3><p>Nghi thức quan trọng nhất là Lễ tắm Bà và Lễ rước bốn bài vị từ lăng Thoại Ngọc Hầu về miếu. Lễ hội thu hút hàng triệu du khách đến cầu tài lộc, bình an.</p>` },
+            "banhdangian": { title: "Lễ Hội Bánh Dân Gian Nam Bộ", subtitle: "Cần Thơ", image: "img/lehoibanhdangiannambotpcantho.jpg", content: `<h3>1. Giới thiệu</h3><p>Sự kiện thường niên tại Cần Thơ nhằm bảo tồn và phát huy giá trị văn hóa ẩm thực, đặc biệt là các loại bánh truyền thống.</p><h3>2. Trải nghiệm</h3><p>Du khách được thưởng thức hơn 100 loại bánh dân gian: bánh xèo, bánh khọt, bánh da lợn, bánh bò... và xem các nghệ nhân trình diễn quy trình làm bánh công phu.</p>` },
+            "nghinhong": { title: "Lễ Hội Nghinh Ông", subtitle: "Cần Giờ - TP.HCM", image: "img/lehoinghinhongtphcm.jpg", content: `<h3>1. Tín ngưỡng ngư dân</h3><p>Lễ hội cúng Cá Ông (cá Voi) diễn ra vào rằm tháng 8 âm lịch. Ngư dân tin rằng Cá Ông là vị thần cứu tinh, giúp họ vượt qua sóng to gió lớn.</p><h3>2. Phần hội sôi nổi</h3><p>Đoàn thuyền rồng trang trí lộng lẫy rước kiệu Ông ra biển, cùng các trò chơi dân gian như đi cà kheo, trói cua, bắt vịt.</p>` },
+            "okombok": { title: "Lễ Hội Ok Om Bok", subtitle: "Sóc Trăng", image: "img/ombo.jpg", content: `<h3>1. Lễ Cúng Trăng</h3><p>Lễ hội lớn nhất trong năm của đồng bào Khmer Nam Bộ, diễn ra vào rằm tháng 10 âm lịch để tạ ơn thần Mặt Trăng đã ban cho mùa màng bội thu.</p><h3>2. Đua Ghe Ngo</h3><p>Hoạt động sôi nổi nhất là giải đua ghe Ngo truyền thống. Tiếng còi, tiếng trống và tiếng hò reo vang dội cả một khúc sông, tạo nên không khí tưng bừng náo nhiệt.</p>` }
+        };
+
+        const banners = document.querySelectorAll('.banner-background img');
+        let bIndex = 0;
+        setInterval(() => { banners[bIndex].classList.remove('active'); bIndex = (bIndex + 1) % banners.length; banners[bIndex].classList.add('active'); }, 5000);
+
+        const track = document.getElementById('foodTrack');
+        const itemWidth = 300; 
+        let isAnimating = false;
+        let autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+        let restartTimer;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) nextSlide(true);
+            if (touchEndX - touchStartX > 50) prevSlide(true);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            clearTimeout(restartTimer);
+            restartTimer = setTimeout(() => {
+                autoPlayTimer = setInterval(() => nextSlide(false), 3000);
+            }, 3000);
+        }
+
+        function nextSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            setTimeout(() => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                isAnimating = false;
+            }, 500);
+        }
+
+        function prevSlide(isManual = false) {
+            if (isAnimating) return;
+            if (isManual) resetAutoPlay();
+
+            isAnimating = true;
+            track.style.transition = 'none';
+            track.prepend(track.lastElementChild);
+            track.style.transform = `translateX(-${itemWidth}px)`;
+            
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'; 
+                track.style.transform = 'translateX(0)';
+                setTimeout(() => { isAnimating = false; }, 500);
+            }, 20);
+        }
+
+        const menuIcon = document.querySelector('.mobile-menu-icon');
+        const navMenu = document.querySelector('.header-menu');
+        if(menuIcon) {
+            menuIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if(navMenu.classList.contains('active')){
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        function showModal(id) {
+            const data = locationData[id];
+            if(!data) return;
+            document.getElementById('modalBody').innerHTML = `<h2>${data.title}</h2>` + data.content;
+            document.getElementById('modalImg').src = data.image;
+            document.getElementById('modalCaption').innerText = data.subtitle;
+            const modal = document.getElementById('infoModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
+            document.querySelectorAll('#modalBody img').forEach(img => { img.onclick = () => openZoomModal(img.src); });
+            
+            history.pushState({modalOpen: true}, null, "");
+        }
+
+        window.addEventListener('popstate', function(event) {
+            const modal = document.getElementById('infoModal');
+            if (modal.style.display === 'flex') {
+                const modalOverlay = document.getElementById('infoModal');
+                modalOverlay.style.opacity = '0';
+                setTimeout(() => { modalOverlay.style.display = 'none'; }, 300);
+            }
+        });
+
+        function handleOverlayClick(e) { 
+            if(e.target.id === 'infoModal') {
+                goBackHistory();
+            } 
+        }
+
+        function goBackHistory() {
+            history.back();
+        }
+
+        function closeModalDirect() {
+            const modal = document.getElementById('infoModal');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function openZoomModal(src) { document.getElementById('zoomedImg').src = src; document.getElementById('zoomModal').style.display = 'flex'; }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) || (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83))) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
